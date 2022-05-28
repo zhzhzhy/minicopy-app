@@ -1,0 +1,360 @@
+.header_view_hide {
+    display: none;
+}
+
+.header_view_show {
+    display: block;
+}
+
+.remainingTimes {
+    background: #f56311;
+    border-radius: 20rpx 0rpx 20rpx 0rpx;
+    color: #fff;
+    font-size: 22rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    width: 128rpx;
+}
+
+.IC {
+    background-color: #231815;
+}
+
+.IC,
+.ID {
+    border-radius: 6rpx 6rpx 6rpx 6rpx;
+    color: #fff;
+    font-size: 36rpx;
+    font-weight: 600;
+    height: 18%;
+    margin: 24rpx auto 0;
+    width: 10%;
+}
+
+.ID {
+    background-color: #9f9f9f;
+}
+
+.tips {
+    border-radius: 20rpx 20rpx 20rpx 20rpx;
+    color: #a9a9a9;
+    font-size: 20rpx;
+    font-weight: 400;
+    margin: 20rpx auto 0;
+    text-align: center;
+    width: 80%;
+}
+
+.animation {
+    bottom: -300rpx;
+    height: 300rpx;
+    margin-left: -50rpx;
+    position: relative;
+    transform: scale(0.5);
+    width: 423.5714rpx;
+}
+
+.box2 {
+    margin-top: -30rpx;
+    position: relative;
+    top: 40rpx;
+}
+
+.box2,
+.box3 {
+    animation: myfirst 3s 2s infinite both;
+    background: linear-gradient(to bottom right, #fff, #fff 60%, hsla(0, 0%, 87%, 0) 0, rgba(245, 162, 0, 0.49));
+    height: 400rpx;
+    margin-left: 10rpx;
+    transform: rotate(-135deg);
+    width: 400rpx;
+}
+
+.box3 {
+    margin-top: -280rpx;
+}
+
+@-webkit-keyframes myfirst {
+    0% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    60% {
+        opacity: 0.2;
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes myfirst {
+    0% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    60% {
+        opacity: 0.2;
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.search {
+    color: #333;
+    font-size: 34rpx;
+    font-weight: 600;
+    margin-top: 15%;
+    padding-left: 0;
+    position: relative;
+}
+
+.action_block {
+    border: 1px solid blue;
+    border-radius: 40rpx 40rpx 0rpx 0rpx;
+    height: auto;
+    margin-top: -105rpx;
+    position: relative;
+    width: 100%;
+}
+
+.eqImg {
+    margin-top: 21px;
+    text-align: center;
+    width: 100%;
+}
+
+.eqImgs {
+    height: 200px;
+    width: 200px;
+}
+
+.eqName {
+    color: #ccc;
+    margin-top: 16rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.panelBtn {
+    margin-bottom: 40rpx;
+    margin-top: 40rpx;
+    text-align: center;
+}
+
+page {
+    height: auto;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.contaniner {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.content {
+    margin-top: 100rpx;
+    text-align: center;
+}
+
+.search {
+    font-weight: bolder;
+    margin-top: 120rpx;
+}
+
+.tip {
+    height: 210rpx;
+    margin-left: 68rpx;
+    margin-top: 160rpx;
+    width: 90%;
+}
+
+.content {
+    height: auto;
+    width: 100%;
+}
+
+.readCardBlock {
+    height: 450rpx;
+    margin: 0 auto;
+    text-align: center;
+    width: 350rpx;
+}
+
+.iconBlock {
+    float: left;
+    margin-left: 37%;
+}
+
+.textBlock {
+    float: right;
+    margin-top: 3rpx;
+}
+
+.orangeCard {
+    background: url('data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTM5NC40OTYgODcwLjRhNTAuNTg2IDUwLjU4NiAwIDEgMCAwLTEwMS4yMjIgNTAuNTg2IDUwLjU4NiAwIDAgMCAwIDEwMS4yMjJ6bTM3OS40OTQgMGE1MC41ODYgNTAuNTg2IDAgMSAwIDAtMTAxLjIyMiA1MC41ODYgNTAuNTg2IDAgMCAwIDAgMTAxLjIyMnpNNjQgMTUzLjZhMzguNCAzOC40IDAgMCAxIDM4LjQtMzguNGgxMzcuOTg0YTM4LjQgMzguNCAwIDAgMSAzNy42ODMgMzAuODc0bDI4LjMxNCAxNDEuNjE5aDU1NS4wMDhhMzguNCAzOC40IDAgMCAxIDM3LjY4MyA0NS41NjhsLTU1LjI0NSAyODkuNzkyYTEwNy40MTggMTA3LjQxOCAwIDAgMS0xMDcuMDA4IDg2LjQyNUg0MDIuMjI3YTEwNy40MTggMTA3LjQxOCAwIDAgMS0xMDcuMDA4LTg2LjQyNWwtNTcuNjUxLTI4Ny44NDdhMzguMTk1IDM4LjE5NSAwIDAgMS0uNjE0LTMuMDcyTDIwOC44OTYgMTkySDEwMi40QTM4LjQgMzguNCAwIDAgMSA2NCAxNTMuNnptMjU3Ljc5MiAyMTAuODkzIDQ4Ljc0MiAyNDMuNTU4YTMwLjU2NiAzMC41NjYgMCAwIDAgMzAuNTY3IDI0LjYyN2gzMzYuNzkzYTMwLjU2NiAzMC41NjYgMCAwIDAgMzAuNTY3LTI0LjUyNGw0Ni40OS0yNDMuNjYxSDMyMS43OTF6IiBmaWxsPSIjRjVBMjAwIi8+PC9zdmc+');
+    background-size: 40rpx 40rpx;
+    height: 40rpx;
+    width: 40rpx;
+}
+
+.sonType {
+    background: #f2f2f2;
+    border-radius: 20rpx 20rpx 20rpx 20rpx;
+    color: #a9a9a9;
+    font-size: 20rpx;
+    font-weight: 400;
+    margin-left: 10rpx;
+    padding: 0rpx 18rpx;
+}
+
+.startWriteCard {
+    margin-top: 13%;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (min-height: 812px) {
+    .startWriteCard {
+        margin-top: 30%;
+    }
+}
+
+.bottom {
+    bottom: 2%;
+    height: 40rpx;
+    margin-top: 7%;
+    overflow-x: hidden;
+    padding-top: 2%;
+    position: absolute;
+    width: 99%;
+}
+
+.bottomBlock {
+    float: left;
+    font-weight: 400;
+    margin-left: 11%;
+    margin-top: -1.7%;
+    position: absolute;
+    width: 45%;
+}
+
+.bottomBlock,
+.problem {
+    color: #f5a200;
+    font-size: 28rpx;
+}
+
+.problem {
+    float: right;
+    margin-right: 26%;
+    margin-top: -1.3%;
+}
+
+.cancel {
+    border-top: 1px solid #e5e5e5;
+    color: #000;
+    font-size: 34rpx;
+    font-weight: 500;
+    height: 130rpx;
+    line-height: 130rpx;
+    margin-top: 450rpx;
+    text-align: center;
+    width: 640rpx;
+}
+
+.cancel,
+.frame {
+    position: absolute;
+}
+
+.frame {
+    background: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    top: 0;
+    width: 100%;
+}
+
+.whiteBlock {
+    background: #fff;
+    border-radius: 8px 8px 8px 8px;
+    height: 592rpx;
+    left: 6.6%;
+    margin-top: 376rpx;
+    position: absolute;
+    right: 5%;
+    width: 640rpx;
+}
+
+.number0 {
+    color: #000;
+    font-size: 34rpx;
+    font-weight: 500;
+    height: 48rpx;
+    margin-top: 64rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.openVip {
+    border-top: 1px solid #ccc;
+    color: #f5a200;
+    margin-top: 120rpx;
+}
+
+.openVip,
+.purchaseCard {
+    border-bottom: 1px solid #ccc;
+    height: 90rpx;
+    line-height: 64rpx;
+    padding-top: 30rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.purchaseCard {
+    color: #576b95;
+}
+
+.cancel1 {
+    color: #000;
+    font-weight: 500;
+    margin-top: 6%;
+    text-align: center;
+    width: 100%;
+}

@@ -1,0 +1,29 @@
+.content {
+    height: auto;
+    margin-top: 204rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.updateImg {
+    height: 300rpx;
+    width: 300rpx;
+}
+
+.remainText {
+    color: #333;
+    font-size: 30rpx;
+    font-weight: 700;
+    margin-top: 28rpx;
+}
+
+.progressBlock {
+    height: auto;
+    margin-top: 40rpx;
+    width: 100%;
+}
+
+.con-pro {
+    margin: 0 auto;
+    width: 402rpx;
+}

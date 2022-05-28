@@ -1,0 +1,126 @@
+<template>
+    <view>
+        <view class="custom">
+            <view class="title">金币排行榜</view>
+            <view class="mine">
+                <view class="headPortrait">
+                    <image class="headPortraitImg" src="/static/static/img/logo.jpg"></image>
+                </view>
+                <view class="ranking">
+                    <view class="rankingNumber">
+                        <text>127</text>
+                    </view>
+                    <view class="rankingText">
+                        <text>我的排名</text>
+                    </view>
+                </view>
+                <view class="myCoins">
+                    <view class="myCoinsNumber">
+                        <text>80</text>
+                    </view>
+                    <view class="myCoinsText">
+                        <text>我的金币</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="content">
+            <view class="rankBlock">
+                <view class="firstImgBlock">
+                    <image class="firstImg" src="/static/static/img/first.svg"></image>
+                </view>
+                <view class="headImgBlock">
+                    <image class="headImg" src="/static/static/img/logo.jpg"></image>
+                </view>
+                <view class="name">
+                    <text>尼古拉1</text>
+                </view>
+                <view class="coinNumber">
+                    <view class="coinBlock">
+                        <icon class="coin"></icon>
+                    </view>
+                    <view class="coinText">
+                        <text>9999</text>
+                    </view>
+                </view>
+            </view>
+            <view class="rankBlocks">
+                <view class="firstImgBlock">
+                    <image class="firstImg" src="/static/static/img/second.svg"></image>
+                </view>
+                <view class="headImgBlock">
+                    <image class="headImgs" src="/static/static/img/logo.jpg"></image>
+                </view>
+                <view class="name">
+                    <text>尼古拉2</text>
+                </view>
+                <view class="coinNumber">
+                    <view class="coinBlock">
+                        <icon class="coin"></icon>
+                    </view>
+                    <view class="coinText">
+                        <text>9999</text>
+                    </view>
+                </view>
+            </view>
+            <view class="rankBlocks">
+                <view class="firstImgBlock">
+                    <image class="firstImg" src="/static/static/img/third.svg"></image>
+                </view>
+                <view class="headImgBlock">
+                    <image class="headImgs" src="/static/static/img/logo.jpg"></image>
+                </view>
+                <view class="name">
+                    <text>尼古拉3</text>
+                </view>
+                <view class="coinNumber">
+                    <view class="coinBlock">
+                        <icon class="coin"></icon>
+                    </view>
+                    <view class="coinText">
+                        <text>9999</text>
+                    </view>
+                </view>
+            </view>
+            <view class="rankBlocks">
+                <view class="firstImgBlock">
+                    <text style="margin-left: 25rpx; color: #666666; font-size: 24rpx; font-weight: 400">4</text>
+                </view>
+                <view class="headImgBlock">
+                    <image class="headImgs" src="/static/static/img/logo.jpg"></image>
+                </view>
+                <view class="name">
+                    <text>尼古拉4</text>
+                </view>
+                <view class="coinNumber">
+                    <view class="coinBlock">
+                        <icon class="coin"></icon>
+                    </view>
+                    <view class="coinText">
+                        <text>9999</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+
+<script>
+export default {
+    data() {
+        return {};
+    },
+    onLoad: function (n) {},
+    onReady: function () {},
+    onShow: function () {},
+    onHide: function () {},
+    onUnload: function () {},
+    onPullDownRefresh: function () {},
+    onReachBottom: function () {},
+    onShareAppMessage: function () {},
+    methods: {}
+};
+</script>
+<style>
+@import './ranking.css';
+</style>

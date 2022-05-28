@@ -1,0 +1,262 @@
+{
+	"pages": [
+		{
+			"path": "pages/device-connect-main/index",
+			"style": {
+				"component": true,
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/device-master-mode/index",
+			"style": {
+				"navigationBarTitleText": "专家模式",
+				"backgroundTextStyle": "light",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1A1D22",
+				"disableScroll": true
+			}
+		},
+		{
+			"path": "pages/password-management/password-management",
+			"style": {
+				"navigationBarTitleText": "密码管理",
+				"backgroundTextStyle": "light",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1A1D22"
+			}
+		},
+		{
+			"path": "pages/data-comparison/index",
+			"style": {
+				"navigationBarTitleText": "数据对比",
+				"backgroundTextStyle": "light",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1A1D22"
+			}
+		},
+		{
+			"path": "pages/user-buy-vip/buy",
+			"style": {
+				"navigationBarTitleText": "开通vip",
+				"navigationBarBackgroundColor": "#ffd18c"
+			}
+		},
+		{
+			"path": "pages/user-buy-writetag-chance/chance",
+			"style": {
+				"navigationBarTitleText": "购买次卡"
+			}
+		},
+		{
+			"path": "pages/reward-task-tiktok/tiktok",
+			"style": {
+				"navigationBarTitleText": "发布抖音"
+			}
+		},
+		{
+			"path": "pages/card-dump-select/list",
+			"style": {
+				"navigationBarTitleText": "卡包"
+			}
+		},
+		{
+			"path": "pages/card-wallet-info/info",
+			"style": {
+				"navigationBarTitleText": "卡包详情"
+			}
+		},
+		{
+			"path": "pages/card-wallet-list/list",
+			"style": {
+				"navigationBarTitleText": "卡包"
+			}
+		},
+		{
+			"path": "pages/user-login-onekey/login",
+			"style": {
+				"component": true
+			}
+		},
+		{
+			"path": "pages/user-my-info-main/user",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/shop-application-main/shop",
+			"style": {
+				"navigationBarTitleText": "商城"
+			}
+		},
+		{
+			"path": "pages/device-api-test/index",
+			"style": {}
+		},
+		{
+			"path": "pages/device-connect-list/discovery",
+			"style": {
+				"navigationBarTitleText": "搜索设备"
+			}
+		},
+		{
+			"path": "pages/device-card-reading/reading",
+			"style": {
+				"component": true,
+				"navigationBarTitleText": "读卡"
+			}
+		},
+		{
+			"path": "pages/device-card-read-fail/fail",
+			"style": {
+				"component": true
+			}
+		},
+		{
+			"path": "pages/device-card-write-ready/write",
+			"style": {
+				"component": true,
+				"navigationBarTitleText": "写卡"
+			}
+		},
+		{
+			"path": "pages/device-card-writing/writing",
+			"style": {
+				"navigationBarTitleText": "写卡"
+			}
+		},
+		{
+			"path": "pages/device-card-write-success/success",
+			"style": {}
+		},
+		{
+			"path": "pages/device-card-write-fail/fail",
+			"style": {
+				"component": true
+			}
+		},
+		{
+			"path": "pages/device-firmware-update/index",
+			"style": {
+				"navigationBarTitleText": "固件更新"
+			}
+		},
+		{
+			"path": "pages/settings-program-main/settings",
+			"style": {
+				"navigationBarTitleText": "功能设置"
+			}
+		},
+		{
+			"path": "pages/settings-device-unbind/unbind",
+			"style": {
+				"navigationBarTitleText": "搜索设备"
+			}
+		},
+		{
+			"path": "pages/user-go-taobao/go",
+			"style": {}
+		},
+		{
+			"path": "pages/user-agreement/agreement",
+			"style": {
+				"navigationBarTitleText": "用户协议"
+			}
+		},
+		{
+			"path": "pages/user-feedback-commit/feedback",
+			"style": {
+				"navigationBarTitleText": "意见反馈"
+			}
+		},
+		{
+			"path": "pages/user-feedback-history/history",
+			"style": {
+				"navigationBarTitleText": "反馈记录"
+			}
+		},
+		{
+			"path": "pages/user-exchange-code/exchange",
+			"style": {
+				"navigationBarTitleText": "填写兑换码"
+			}
+		},
+		{
+			"path": "pages/user-info-details/info",
+			"style": {
+				"navigationBarTitleText": "个人资料"
+			}
+		},
+		{
+			"path": "pages/user-device-help/help",
+			"style": {
+				"navigationBarTitleText": "问题帮助"
+			}
+		},
+		{
+			"path": "pages/reward-task-list/list",
+			"style": {
+				"navigationBarTitleText": "金币任务"
+			}
+		},
+		{
+			"path": "pages/reward-task-history/history",
+			"style": {
+				"navigationBarTitleText": "金币明细"
+			}
+		},
+		{
+			"path": "pages/reward-task-ranking/ranking",
+			"style": {
+				"backgroundTextStyle": "light",
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#fff"
+			}
+		},
+		{
+			"path": "pages/about-nikolalab/about-us",
+			"style": {
+				"navigationBarTitleText": "关于我们"
+			}
+		}
+	],
+	"tabBar": {
+		"selectedColor": "#f5a200",
+		"list": [
+			{
+				"pagePath": "pages/device-connect-main/index",
+				"text": "首页",
+				"iconPath": "static/img/home.png",
+				"selectedIconPath": "static/img/home1.png"
+			},
+			{
+				"pagePath": "pages/shop-application-main/shop",
+				"text": "商城",
+				"iconPath": "static/img/mall.png",
+				"selectedIconPath": "static/img/mall1.png"
+			},
+			{
+				"pagePath": "pages/card-wallet-list/list",
+				"text": "卡包",
+				"iconPath": "static/img/card.png",
+				"selectedIconPath": "static/img/card1.png"
+			},
+			{
+				"pagePath": "pages/user-my-info-main/user",
+				"text": "我的",
+				"iconPath": "static/img/person.png",
+				"selectedIconPath": "static/img/person1.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#ffffff",
+		"navigationBarTextStyle": "black",
+		"backgroundColor": "#ffffff"
+	},
+	"subPackages": []
+}

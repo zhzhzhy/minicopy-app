@@ -1,0 +1,93 @@
+.loginContent {
+    margin-top: 140rpx;
+}
+
+.logo {
+    height: 132px;
+    margin-left: 62rpx;
+    width: 201px;
+}
+
+.logoImg {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.loginButton {
+    margin-left: 44rpx;
+    margin-right: 44rpx;
+    margin-top: 240rpx;
+}
+
+.agree {
+    bottom: 70rpx;
+    height: auto;
+    margin-right: 160rpx;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.viewRead {
+    margin-left: 0rpx;
+    margin-top: 0rpx;
+    width: 100%;
+}
+
+.radio {
+    height: 26rpx;
+    left: 0rpx;
+    position: relative;
+    transform: scale(0.8);
+    width: 26rpx;
+}
+
+checkbox .wx-checkbox-input {
+    border-radius: 50%;
+    height: 46rpx;
+    width: 46rpx;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+    background: #1cd66c;
+    border: 1rpx solid #1cd66c;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    background: transparent;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    transform: translate(-50%, -50%) scale(1);
+    width: 40rpx;
+}
+
+@media screen and (max-width: 320px) {
+    .read {
+        color: #444;
+        font-weight: 400rpx;
+        margin-left: 20rpx;
+    }
+
+    .privacy,
+    .read {
+        font-size: 34rpx;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .read {
+        color: #444;
+        font-weight: 400rpx;
+        margin-left: 20rpx;
+    }
+
+    .privacy,
+    .read {
+        font-size: 26rpx;
+    }
+}

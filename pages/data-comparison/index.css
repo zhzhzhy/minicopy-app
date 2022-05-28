@@ -1,0 +1,90 @@
+page {
+    background: #131418;
+}
+
+.data1 {
+    color: #f5a200;
+    margin-top: 40rpx;
+}
+
+.data1,
+.data2 {
+    font-size: 30rpx;
+    font-weight: 700;
+    margin-left: 36rpx;
+}
+
+.data2 {
+    color: #fff;
+    margin-top: 30rpx;
+}
+
+.block {
+    margin-left: 24rpx;
+    margin-right: 24rpx;
+    padding-bottom: 30rpx;
+    width: 93%;
+}
+
+.block0Title {
+    color: #838b99;
+    font-size: 26rpx;
+    font-weight: 500;
+    height: 60rpx;
+    padding-left: 12rpx;
+    width: 100%;
+}
+
+.dataBlock {
+    height: 90rpx;
+    letter-spacing: 2rpx;
+    width: 100%;
+}
+
+.block0Data1,
+.dataBlock {
+    color: #fff;
+    font-family: monospace;
+    margin-left: 16rpx;
+    margin-right: 40rpx;
+}
+
+.block0Data1 {
+    font-size: 26rpx;
+    font-weight: 500;
+    width: 90%;
+}
+
+.rich_text_top {
+    height: 1rpx;
+    margin-top: 20rpx;
+    width: 100%;
+}
+
+.number1 {
+    color: #f5a200;
+}
+
+.identical {
+    background: rgba(22, 194, 148, 0.2);
+    border: 1px solid hsla(0, 0%, 100%, 0.2);
+    border-radius: 4px 4px 4px 4px;
+    color: #16c294;
+    float: right;
+    font-size: 20rpx;
+    font-weight: 400;
+    height: 40rpx;
+    line-height: 40rpx;
+    margin-top: -60rpx;
+    text-align: center;
+    width: 60rpx;
+}
+
+.line {
+    background: #f0f0f0;
+    height: 2rpx;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    opacity: 0.1;
+    width: 95%;
+}

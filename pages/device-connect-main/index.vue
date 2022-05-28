@@ -1,0 +1,524 @@
+<template>
+    <view>
+        <view class="content" v-if="pageStatus == 0">
+            <view style="margin-top: 132rpx">
+                <van-loading vertical size="60px">加载中...</van-loading>
+            </view>
+        </view>
+        <view class="content" v-if="pageStatus == 1">
+            <block v-if="isAuthorizeLost">
+                <view style="margin-top: 132rpx">
+                    <view>
+                        <icon class="blue_tooth"></icon>
+                    </view>
+                    <view class="search">
+                        <text>蓝牙授权失败</text>
+                    </view>
+                    <view class="remain">
+                        <text>此应用需要您的授权</text>
+                    </view>
+                </view>
+                <view class="btn">
+                    <van-button
+                        @tap.native="onUserTryReAuthorizeCallback"
+                        customStyle="width:40%;height: 40px;font-size:30rpx;border-radius:20px 20px 20px 20px;background:#F5A200;border:1px solid #F5A200;color:#fff;font-weight:500;"
+                        type="primary"
+                    >
+                        重新授权
+                    </van-button>
+                </view>
+            </block>
+            <block v-else>
+                <view style="margin-top: 132rpx">
+                    <view class="device-no-found-main-title">
+                        <text>无法找到设备</text>
+                    </view>
+                    <view class="device-no-found-sub-title">
+                        <text>请确保以下设置已打开</text>
+                    </view>
+                </view>
+                <view style="width: max-content; margin: auto; margin-top: 167px">
+                    <view style="text-align: left; margin-top: 25rpx" v-for="(item, index) in systemSettingsLostList" :key="item.title">
+                        <radio disabled :checked="item.success"></radio>
+
+                        <text style="margin-left: 10rpx; color: #666">{{ item.title }}</text>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view v-if="pageStatus == 2 || pageStatus == 3">
+            <devicebar :showcontent="true">
+                <master></master>
+            </devicebar>
+        </view>
+        <block v-if="pageStatus == 2">
+            <view class="content">
+                <view class="circleBox">
+                    <view class="circle4"></view>
+                    <view class="circle5">
+                        <view class="logoBlock">
+                            <image class="logoImg" src="/static/static/img/logoImg.svg"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="search">扫描中...</view>
+                <view class="tip">
+                    <view class="tips1">
+                        <text>1.请确保手机已打开“蓝牙”和“位置信息”或“定位服务”</text>
+                    </view>
+                    <view class="tips">
+                        <text>2.请确保读卡器已插电</text>
+                    </view>
+                    <view class="tips">
+                        <text>3.请确保微信取得了蓝牙和定位权限</text>
+                    </view>
+                </view>
+            </view>
+            <view class="block">
+                <van-action-sheet @close="onCloseDeviceFoundDialog" :show="showFindDialog" style="color: #fff" title="连接设备">
+                    <view style="text-align: center">
+                        <van-image useLoadingSlot fit="contain" height="400rpx" src="https://s1.ax1x.com/2022/03/08/bcywAP.gif" width="400rpx">
+                            <image height="400rpx" mode="aspectFit" slot="loading" src="/static/static/img/indexDevice.png" width="400rpx"></image>
+                        </van-image>
+                    </view>
+                    <view class="eqName">
+                        <text>{{ deviceSelected.name }}</text>
+                    </view>
+                    <view class="panelBtn" v-if="deviceBindStatus == 3">
+                        <view>
+                            <text>此设备已被他人绑定</text>
+                        </view>
+                        <view style="margin-top: 16rpx">
+                            <text>
+                                需要对方
+                                <text style="color: #f5a200">解除绑定</text>
+                                才可连接
+                            </text>
+                        </view>
+                    </view>
+                    <view class="panelBtn" v-if="deviceBindStatus == 2">
+                        <van-button
+                            @tap.native="connectFirstDevice"
+                            customStyle="width:90%;height: 40px;font-size:30rpx;border-radius:20px 20px 20px 20px;background: rgba(245, 162, 0, 0.1);border:1px solid #fff;color:#f5a200;font-weight:500;"
+                            type="primary"
+                        >
+                            连接
+                        </van-button>
+                    </view>
+                    <view class="panelBtn" v-if="deviceBindStatus == 1">
+                        <van-button
+                            @tap.native="connectFirstDevice"
+                            customStyle="width:90%;height: 40px;font-size:30rpx;border-radius:20px 20px 20px 20px;background:#F5A200;border:1px solid #F5A200;color:#fff;font-weight:500;"
+                            type="primary"
+                        >
+                            连接并绑定
+                        </van-button>
+                    </view>
+                </van-action-sheet>
+            </view>
+        </block>
+        <view v-if="pageStatus == 3">
+            <view class="contents">
+                <view class="device">
+                    <image class="deviceImg" src="/static/static/img/indexDevice.png"></image>
+                </view>
+            </view>
+            <view class="deviceName">{{ deviceNameConnected }}</view>
+            <view class="imgTextBlock">
+                <view class="centerBlock">
+                    <view class="noConnectBlock">
+                        <icon class="noConnect"></icon>
+                    </view>
+                    <view @tap="onUserDisconnectClick" class="noConnectText">断开连接</view>
+                </view>
+            </view>
+            <view class="doubleBtn">
+                <button
+                    @tap="onGotoReadTagClick"
+                    style="width: 50%; font-size: 30rpx; border-radius: 20px 20px 20px 20px; background: #f5a200; color: #fff; font-weight: 500; border: #f5a200"
+                >
+                    开始读卡
+                </button>
+            </view>
+        </view>
+        <view class="frame" v-if="sendVip == false">
+            <view class="modalBlock">
+                <image @tap="sendVipConfirm" class="modalImg" src="/static/static/img/sendVip.png"></image>
+            </view>
+        </view>
+        <tabbar selected="0"></tabbar>
+    </view>
+</template>
+
+<script>
+import vanButton from '../../miniprogram_npm/@vant/weapp/button/index';
+import vanPopup from '../../miniprogram_npm/@vant/weapp/popup/index';
+import vanCell from '../../miniprogram_npm/@vant/weapp/cell/index';
+import vanImage from '../../miniprogram_npm/@vant/weapp/image/index';
+import vanActionSheet from '../../miniprogram_npm/@vant/weapp/action-sheet/index';
+import vanLoading from '../../miniprogram_npm/@vant/weapp/loading/index';
+import devicebar from '@/components/device-tab-bar/device';
+import master from '@/components/switch-master-mode/master';
+import tabbar from '@/components/custom-tab-bar/index';
+var e = require('../../4F97F14255C842DF29F19945DB418C74.js');
+
+var t = require('../../A1D2754255C842DFC7B41D4546C18C74.js');
+
+export default {
+    components: {
+        vanButton,
+        vanPopup,
+        vanCell,
+        vanImage,
+        vanActionSheet,
+        vanLoading,
+        devicebar,
+        master,
+        tabbar
+    },
+    data() {
+        return {
+            pageStatus: 0,
+            isAuthorizeLost: false,
+            systemSettingsLostList: [],
+            showFindDialog: false,
+            deviceSelected: null,
+            deviceNameConnected: '',
+            deviceBindStatus: '',
+            sendVip: true,
+            activity_type: '',
+            sendVipClose: ''
+        };
+    },
+    onShow: function () {
+        e.onBLEDeviceErrCallback(this.onBLEAdapterErrorCall);
+
+        if (-1 == this.timerid) {
+            this.onTimerCheckResourceCall();
+        }
+    },
+    onHide: function () {
+        e.onBLEDeviceErrCallback(null);
+
+        if (-1 != this.timerid) {
+            clearTimeout(this.timerid);
+            this.timerid = -1;
+        }
+    },
+    onLoad: function (t) {
+        var that = this;
+        uni.hideTabBar();
+        e.registerDeviceFoundCallback(this.onBLEDeviceFoundCallback);
+        e.registerDeviceRemovedCallback(this.onBLEDeviceRemoveCallback);
+        e.registerOnBLEConnectedCallback(this.onBLEDeviceConnectCallback);
+        e.registerOnBLEDisconnectedCallback(this.onBLEDeviceDisconnectCallback);
+        this.checkMiniProgramSettings(
+            function () {
+                that.onTimerCheckResourceCall();
+            },
+            function () {
+                that.setAuthorizeLost('小程序无蓝牙权限', '连接Mini复卡机需要蓝牙权限。', true);
+            }
+        );
+    },
+    onUnload: function () {
+        e.unregisterDeviceFoundCallback(this.onBLEDeviceFoundCallback);
+        e.unregisterDeviceRemovedCallback(this.onBLEDeviceRemoveCallback);
+        e.unregisterOnBLEConnectedCallback(this.onBLEDeviceConnectCallback);
+        e.unregisterOnBLEDisconnectedCallback(this.onBLEDeviceDisconnectCallback);
+    },
+    methods: {
+        isNeedRestartBLEAdapter: true,
+        isNeedCheckResourceNext: true,
+        isNeedReSelectBLEDevice: true,
+
+        setPageStatus: function (e, t) {
+            this.setData(
+                {
+                    pageStatus: e
+                },
+                t
+            );
+        },
+
+        setAuthorizeLost: function () {
+            this.setData({
+                pageStatus: 1,
+                isAuthorizeLost: true
+            });
+        },
+
+        setSystemSettingsLost: function (e, t) {
+            this.setData(
+                {
+                    pageStatus: 1,
+                    isAuthorizeLost: false,
+                    systemSettingsLostList: e
+                },
+                t
+            );
+        },
+
+        sendVipConfirm: function () {
+            this.setData({
+                sendVipClose: 'yes'
+            });
+            console.log('点击确定了' + this.sendVipClose);
+            t.sendVip(this, this.activity_type);
+            t.userUseVip();
+            t.showToast('已经领取');
+        },
+
+        onUserDisconnectClick: function () {
+            uni.showModal({
+                title: '提示',
+                content: '确定断开连接吗？',
+                success: function (t) {
+                    if (t.confirm) {
+                        e.disconnectExistsDevice();
+                    }
+                }
+            });
+        },
+
+        onGotoReadTagClick: function () {
+            uni.navigateTo({
+                url: '/pages/device-card-reading/reading'
+            });
+        },
+
+        onCloseDeviceFoundDialog: function () {
+            this.setData({
+                showFindDialog: false
+            });
+        },
+
+        onBLEAdapterErrorCall: function (e) {
+            console.log('在主页面初始化蓝牙适配器遇到的问题' + JSON.stringify(e));
+            t.processBLEError(e);
+
+            if (10003 == e.errCode) {
+                this.setData({
+                    showFindDialog: true
+                });
+            }
+        },
+
+        onBLEDeviceFoundCallback: function (e) {
+            var that = this;
+
+            if (this.isNeedReSelectBLEDevice) {
+                console.log('需要重新选定设备: ' + JSON.stringify(e));
+                this.isNeedReSelectBLEDevice = false;
+                this.setData({
+                    showFindDialog: true,
+                    deviceSelected: e
+                });
+
+                if (t.isLogin()) {
+                    t.getDeviceBindStatus(e.deviceId, function (e) {
+                        switch (e) {
+                            case 0:
+                                e = 2;
+                                break;
+
+                            case 1:
+                                e = 3;
+                                break;
+
+                            case 2:
+                                e = 1;
+                        }
+
+                        that.setData({
+                            deviceBindStatus: e
+                        });
+                    });
+                } else {
+                    this.setData({
+                        deviceBindStatus: 2
+                    });
+                }
+            } else {
+                console.log('不需要重新选定设备');
+            }
+        },
+
+        onBLEDeviceRemoveCallback: function (e) {
+            console.log('设备被移除了: ' + JSON.stringify(e));
+            this.isNeedReSelectBLEDevice ||
+                (e.deviceId == this.deviceSelected.deviceId &&
+                    ((this.isNeedReSelectBLEDevice = true),
+                    this.setData({
+                        showFindDialog: false,
+                        deviceSelected: null
+                    })));
+        },
+
+        connectFirstDevice: function () {
+            if (e.isLeAdapterInitialized()) {
+                if (1 != t.isLogin(this)) {
+                    console.log('未登录');
+                    t.login(this);
+                    return false;
+                }
+
+                console.log('已经登录');
+                uni.showLoading({
+                    title: '正在连接中'
+                });
+                var i = this.deviceSelected;
+                t.getDeviceBindStatus(i.deviceId, function (s) {
+                    if (1 == s) {
+                        uni.showModal({
+                            content: '该设备已被绑定',
+                            showCancel: false
+                        });
+                        uni.hideLoading();
+                    } else {
+                        e.connectTheBLEByMacAddr(i.deviceId);
+                        t.setDeviceInfo(i);
+                    }
+                });
+            } else {
+                t.showToast('检测到蓝牙没有打开哦~');
+            }
+        },
+
+        onBLEDeviceDisconnectCallback: function () {
+            this.setPageStatus(2);
+            this.isNeedCheckResourceNext = true;
+            this.createResourceCheckTimer();
+        },
+
+        onBLEDeviceConnectCallback: function () {
+            this.isNeedCheckResourceNext = false;
+            var e = t.getDeviceInfo();
+            t.bindDeviceWithUser(e.deviceId, e.name);
+            this.setData({
+                deviceNameConnected: e.name
+            });
+            this.setPageStatus(3);
+            uni.hideLoading({
+                success: function (e) {
+                    uni.showToast({
+                        title: '连接成功！',
+                        icon: 'success',
+                        duration: 1000
+                    });
+                }
+            });
+            t.checkActivity(this);
+        },
+
+        onBLEAdapterInitOkCallback: function () {
+            console.log('蓝牙适配器已经被初始化了，将会自动启动设备扫描。');
+            this.setPageStatus(2);
+            setTimeout(function () {
+                e.startBLEDevicesScanner();
+            }, 500);
+        },
+
+        createResourceCheckTimer: function () {
+            var that = this;
+            this.timerid = setTimeout(function () {
+                that.onTimerCheckResourceCall();
+            }, 2000);
+        },
+
+        onTimerCheckResourceCall: function () {
+            var that = this;
+            this.checkSystemSettings(
+                function () {
+                    if (that.isNeedRestartBLEAdapter) {
+                        that.isNeedRestartBLEAdapter = false;
+
+                        if (e.isLeAdapterInitialized()) {
+                            e.closeBLEDevicesAdapter(function () {
+                                setTimeout(function () {
+                                    e.startBLEDevicesAdapter(that.onBLEAdapterInitOkCallback);
+                                }, 500);
+                            });
+                        } else {
+                            e.startBLEDevicesAdapter(that.onBLEAdapterInitOkCallback);
+                        }
+                    }
+
+                    if (that.isNeedCheckResourceNext) {
+                        that.createResourceCheckTimer();
+                    } else {
+                        console.log('不需要继续检查资源完整性，将不会再次启动检测定时器。');
+                    }
+                },
+                function () {
+                    that.createResourceCheckTimer();
+                    that.isNeedRestartBLEAdapter = true;
+                }
+            );
+        },
+
+        checkSystemSettings: function (e, t) {
+            var i = uni.getSystemInfoSync();
+            var s = [
+                {
+                    title: '打开手机蓝牙',
+                    success: i.bluetoothEnabled
+                },
+                {
+                    title: '打开手机定位',
+                    success: i.locationEnabled
+                },
+                {
+                    title: '打开微信定位权限',
+                    success: i.locationAuthorized
+                }
+            ];
+            var c = true;
+            for (var n in s) {
+                if (!s[n].success) {
+                    c = false;
+                    break;
+                }
+            }
+
+            if (c) {
+                e();
+            } else {
+                this.setSystemSettingsLost(s);
+                t();
+            }
+        },
+
+        checkMiniProgramSettings: function (e, t) {
+            uni.authorize({
+                scope: 'scope.bluetooth',
+                success: e,
+                fail: function (e) {
+                    console.log('wx.authorize 接口调用错误: ' + JSON.stringify(e));
+                    t();
+                }
+            });
+        },
+
+        onUserTryReAuthorizeCallback: function () {
+            var that = this;
+            uni.openSetting({
+                success: function (t) {
+                    if (t.authSetting['scope.bluetooth']) {
+                        console.log('用户已经授予小程序蓝牙权限，将继续检查其他的系统资源完整性...');
+                        that.createResourceCheckTimer();
+                    } else {
+                        uni.showToast({
+                            icon: 'none',
+                            title: '请勾选允许使用蓝牙'
+                        });
+                    }
+                }
+            });
+        }
+    }
+};
+</script>
+<style>
+@import './index.css';
+</style>

@@ -1,0 +1,53 @@
+<template>
+    <view>
+        <view class="topLine"></view>
+        <view class="block">
+            <view class="title">分享给好友</view>
+            <view class="text">2022-01-28</view>
+            <view class="number">
+                <text>+20</text>
+            </view>
+        </view>
+        <view class="block">
+            <view class="title">观看广告</view>
+            <view class="text">2022-01-28</view>
+            <view class="number">
+                <text>+10</text>
+            </view>
+        </view>
+        <view class="block">
+            <view class="title">好友下单</view>
+            <view class="text">2022-01-28</view>
+            <view class="number">
+                <text>+100</text>
+            </view>
+        </view>
+        <view class="block">
+            <view class="title">商城消费</view>
+            <view class="text">2022-01-28</view>
+            <view class="numbers">
+                <text>-1000</text>
+            </view>
+        </view>
+    </view>
+</template>
+
+<script>
+export default {
+    data() {
+        return {};
+    },
+    onLoad: function (n) {},
+    onReady: function () {},
+    onShow: function () {},
+    onHide: function () {},
+    onUnload: function () {},
+    onPullDownRefresh: function () {},
+    onReachBottom: function () {},
+    onShareAppMessage: function () {},
+    methods: {}
+};
+</script>
+<style>
+@import './history.css';
+</style>

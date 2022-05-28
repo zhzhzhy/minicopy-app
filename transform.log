@@ -1,0 +1,102 @@
+miniprogram-to-uniapp v2 转换日志
+
+工具版本：v2.0.15
+转换模式：HBuilder X
+是否合并css：否
+项目 '_1440411407_7' 开始转换...
+sourceFolder = /home/geek/wxapkg-convertor/src/_1440411407_7
+搜索到497个文件，耗时：3ms
+
+
+[Tip]这里引用的全是网络字体，可能在app上面有兼容问题（如字体图标显示不出来，运行后没问题就不用管）  fileKey: app
+
+[Tip]这个页面的结构非标准结构，尝试修复一下，如有问题，请先调整后，再转换。 file:miniprogram_npm/@vant/weapp/common/component
+
+[Tip]这里引用的全是网络字体，可能在app上面有兼容问题（如字体图标显示不出来，运行后没问题就不用管）  fileKey: miniprogram_npm/@vant/weapp/icon/index
+[Error]variableHandle:  components/dialog-add-card/index
+[Error]variableHandle:  components/dialog-m1-data-editor/editor
+[Error]variableHandle:  components/dialog-msg-box-dark/dialog
+[Error]variableHandle:  components/dialog-tag-nick-editor/editor
+格式化Error: fileKey: miniprogram_npm/@vant/weapp/common/component     type:js       error： SyntaxError: Unexpected token (25:6)
+[0m [90m 23 |[39m     multipleSlots[33m:[39m [33m![39m[35m0[39m[33m,[39m[0m
+[0m [90m 24 |[39m     addGlobalClass[33m:[39m [33m![39m[35m0[39m[0m
+[0m[31m[1m>[22m[39m[90m 25 |[39m   }[33m,[39m [36mexport[39m [36mdefault[39m {[0m
+[0m [90m    |[39m      [31m[1m^[22m[39m[0m
+[0m [90m 26 |[39m                       data() {[0m
+[0m [90m 27 |[39m                           [36mreturn[39m {}[0m
+[0m [90m 28 |[39m                       }[33m,[39m[0m
+    at p (/usr/local/lib/nodejs/node-v16.15.0-linux-x64/lib/node_modules/miniprogram-to-uniapp/node_modules/prettier/parser-babel.js:22:1038)
+    at d (/usr/local/lib/nodejs/node-v16.15.0-linux-x64/lib/node_modules/miniprogram-to-uniapp/node_modules/prettier/parser-babel.js:22:1271)
+    at Object.parse (/usr/local/lib/nodejs/node-v16.15.0-linux-x64/lib/node_modules/miniprogram-to-uniapp/node_modules/prettier/parser-babel.js:27:50335)
+    at Object.parse (/usr/local/lib/nodejs/node-v16.15.0-linux-x64/lib/node_modules/miniprogram-to-uniapp/node_modules/prettier/index.js:7361:23)
+    at coreFormat (/usr/local/lib/nodejs/node-v16.15.0-linux-x64/lib/node_modules/miniprogram-to-uniapp/node_modules/prettier/index.js:8672:18)
+    at formatWithCursor2 (/usr/local/lib/nodejs/node-v16.15.0-linux-x64/lib/node_modules/miniprogram-to-uniapp/node_modules/prettier/index.js:8864:18)
+    at /usr/local/lib/nodejs/node-v16.15.0-linux-x64/lib/node_modules/miniprogram-to-uniapp/node_modules/prettier/index.js:39174:12
+    at Object.format (/usr/local/lib/nodejs/node-v16.15.0-linux-x64/lib/node_modules/miniprogram-to-uniapp/node_modules/prettier/index.js:39188:12)
+    at formateByPrettier (/usr/local/lib/nodejs/node-v16.15.0-linux-x64/lib/node_modules/miniprogram-to-uniapp/src/utils/formatUtils.js:178:24)
+    at Object.formatCode (/usr/local/lib/nodejs/node-v16.15.0-linux-x64/lib/node_modules/miniprogram-to-uniapp/src/utils/formatUtils.js:150:19) {
+  loc: { start: { line: 25, column: 6 } },
+  codeFrame: '\x1B[0m \x1B[90m 23 |\x1B[39m     multipleSlots\x1B[33m:\x1B[39m \x1B[33m!\x1B[39m\x1B[35m0\x1B[39m\x1B[33m,\x1B[39m\x1B[0m\n' +
+    '\x1B[0m \x1B[90m 24 |\x1B[39m     addGlobalClass\x1B[33m:\x1B[39m \x1B[33m!\x1B[39m\x1B[35m0\x1B[39m\x1B[0m\n' +
+    '\x1B[0m\x1B[31m\x1B[1m>\x1B[22m\x1B[39m\x1B[90m 25 |\x1B[39m   }\x1B[33m,\x1B[39m \x1B[36mexport\x1B[39m \x1B[36mdefault\x1B[39m {\x1B[0m\n' +
+    '\x1B[0m \x1B[90m    |\x1B[39m      \x1B[31m\x1B[1m^\x1B[22m\x1B[39m\x1B[0m\n' +
+    '\x1B[0m \x1B[90m 26 |\x1B[39m                       data() {\x1B[0m\n' +
+    '\x1B[0m \x1B[90m 27 |\x1B[39m                           \x1B[36mreturn\x1B[39m {}\x1B[0m\n' +
+    '\x1B[0m \x1B[90m 28 |\x1B[39m                       }\x1B[33m,\x1B[39m\x1B[0m'
+}
+格式化Error: code: Object.defineProperty(exports, "__esModule", {
+  value: !0
+}), exports.VantComponent = void 0;
+
+var e = require("./../mixins/basic.js");
+
+exports.VantComponent = function (s) {
+  a = s, t = r, o = {
+    data: "data",
+    props: "properties",
+    mixins: "behaviors",
+    methods: "methods",
+    beforeCreate: "created",
+    created: "attached",
+    mounted: "ready",
+    destroyed: "detached",
+    classes: "externalClasses"
+  }, Object.keys(o).forEach(function (e) {
+    a[e] && (t[o[e]] = a[e]);
+  }), r.externalClasses = r.externalClasses || [], r.externalClasses.push("custom-class"), r.behaviors = r.behaviors || [], r.behaviors.push(e.basic);
+  var i = s.relation;
+  i && (r.relations = i.relations, r.behaviors.push(i.mixin)), s.field && r.behaviors.push("wx://form-field"), r.options = {
+    multipleSlots: !0,
+    addGlobalClass: !0
+  }, export default {
+                      data() {
+                          return {}
+                      },
+                      
+                  };
+};
+找不到这个组件: components/custom-tab-bar/index
+找不到这个组件: components/custom-tab-bar/index
+[Error]variableHandle:  pages/password-management/password-management
+[Error]variableHandle:  pages/reward-task-tiktok/tiktok
+找不到这个组件: components/custom-tab-bar/index
+找不到这个组件: components/custom-tab-bar/index
+write pages.json success!
+write manifest.json success!
+write main.js success!
+
+
+统计信息：
+
+vue文件数量: 71
+支付api数量: 2
+登录api数量: 4
+
+恭喜你，转换完成！
+用时: 28.132s
+在该小程序项目的同级目录可以看到_uni结尾的项目，即是转换好的uniapp项目，相关日志在该目录里。
+
+注：如有疑问，请添加QQ群(780359397、361784059、603659851)或https://github.com/zhangdaren/miniprogram-to-uniapp进行反馈！
+
+
+

@@ -1,0 +1,90 @@
+.container-icon {
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 36rpx;
+    font-weight: 500;
+    padding-bottom: 24rpx;
+    padding-top: 58rpx;
+    text-align: center;
+}
+
+.container-title {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 64rpx 30rpx;
+    width: 100%;
+}
+
+.txt-title-main {
+    color: #fff;
+    font-size: 34rpx;
+    letter-spacing: 2rpx;
+    line-height: 40rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.container-input {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 64rpx;
+    padding-left: 48rpx;
+    padding-right: 48rpx;
+    width: 100%;
+}
+
+.input-center-data {
+    border-bottom: 2rpx solid hsla(0,0%,100%,.05);
+    box-sizing: border-box;
+    color: #f5f5f5;
+    font-family: siyuan,monospace;
+    font-size: 32rpx;
+    font-weight: 500;
+    height: 100%;
+    letter-spacing: 2rpx;
+    line-height: 40rpx;
+    padding-bottom: 16rpx;
+    text-align: left;
+    width: 100%;
+}
+
+.btn-bottom-hover {
+    background: #0f1012;
+}
+
+.container-button {
+    align-items: center;
+    border-top: 2rpx solid #262931;
+    display: flex;
+    flex-direction: row;
+    font-size: 34rpx;
+    justify-content: center;
+    line-height: 86rpx;
+    width: 100%;
+}
+
+.btn-base {
+    box-sizing: border-box;
+    flex: 1;
+    font-size: 34rpx;
+    font-weight: 500;
+    height: 100%;
+    letter-spacing: 2rpx;
+    line-height: 48rpx;
+    padding-bottom: 32rpx;
+    padding-top: 32rpx;
+    text-align: center;
+}
+
+.btn-cancel {
+    color: #fff;
+}
+
+.btn-confirm {
+    border-left: 2rpx solid hsla(0,0%,100%,.05);
+    color: #7d90a9;
+}

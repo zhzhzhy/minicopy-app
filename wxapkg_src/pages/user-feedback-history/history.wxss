@@ -1,0 +1,68 @@
+.topLine {
+    background: rgba(0,0,0,.1);
+    height: 2rpx;
+    width: 100%;
+}
+
+page {
+    background: #f9f9f9;
+}
+
+.content {
+    background: #fff;
+    height: auto;
+    width: 100%;
+}
+
+.block {
+    background: #fff;
+    border-bottom: 1px solid #f6f6f6;
+    height: 136rpx;
+    margin-left: 28rpx;
+    margin-top: 40rpx;
+    width: 90%;
+}
+
+.question {
+    color: #666;
+    font-size: 26rpx;
+    font-weight: 400;
+}
+
+.time {
+    margin-top: 24rpx;
+}
+
+.describes {
+    color: #333;
+    font-size: 26rpx;
+    font-weight: 500;
+}
+
+.noData {
+    margin-top: 354rpx;
+    position: absolute;
+}
+
+.noData,.noDataImgBlock {
+    text-align: center;
+    width: 100%;
+}
+
+.noDataImgBlock {
+    height: auto;
+}
+
+.noDataImg {
+    height: 300rpx;
+    width: 300rpx;
+}
+
+.noDataText {
+    color: #a8a8a8;
+    font-size: 30rpx;
+    font-weight: 500;
+    margin-top: 30rpx;
+    text-align: center;
+    width: 100%;
+}

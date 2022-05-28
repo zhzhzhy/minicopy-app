@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "devicebar": "/components/device-tab-bar/device"
+    }
+}

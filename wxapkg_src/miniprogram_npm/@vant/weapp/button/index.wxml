@@ -1,0 +1,14 @@
+<button appParameter="{{appParameter}}" ariaLabel="{{ariaLabel}}" bindcontact="onContact" binderror="onError" bindgetphonenumber="onGetPhoneNumber" bindgetuserinfo="onGetUserInfo" bindlaunchapp="onLaunchApp" bindopensetting="onOpenSetting" bindtap="{{disabled||loading?'':'onClick'}}" businessId="{{businessId}}" class="custom-class {{utils.bem( 'button',[ type,size,{block:block,round:round,plain:plain,square:square,loading:loading,disabled:disabled,hairline:hairline,unclickable:disabled||loading} ] )}} {{hairline?'van-hairline--surround':''}}" data-detail="{{dataset}}" formType="{{formType}}" hoverClass="van-button--active hover-class" id="{{id}}" lang="{{lang}}" openType="{{disabled||loading||canIUseGetUserProfile&&openType==='getUserInfo'?'':openType}}" sendMessageImg="{{sendMessageImg}}" sendMessagePath="{{sendMessagePath}}" sendMessageTitle="{{sendMessageTitle}}" sessionFrom="{{sessionFrom}}" showMessageCard="{{showMessageCard}}" style="{{computed.rootStyle( {plain:plain,color:color,customStyle:customStyle} )}}">
+    <block wx:if="{{loading}}">
+        <van-loading color="{{computed.loadingColor( {type:type,color:color,plain:plain} )}}" customClass="loading-class" size="{{loadingSize}}" type="{{loadingType}}"></van-loading>
+        <view class="van-button__loading-text" wx:if="{{loadingText}}"> {{loadingText}} </view>
+    </block>
+    <block wx:else>
+        <van-icon class="van-button__icon" classPrefix="{{classPrefix}}" customStyle="line-height: inherit;" name="{{icon}}" size="1.2em" wx:if="{{icon}}"></van-icon>
+        <view class="van-button__text">
+            <slot></slot>
+        </view>
+    </block>
+</button>
+<wxs module="utils" src="../wxs/utils.wxs" />
+<wxs module="computed" src="index.wxs" />

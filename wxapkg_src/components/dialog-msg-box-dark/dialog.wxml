@@ -1,0 +1,15 @@
+<van-popup bind:close="onClose" customStyle="width: 88%; border-radius: 24rpx; background: #1A1D26;" duration="100" show="{{show}}">
+    <view style="display: flex; flex-direction: column; width: 100%;">
+        <view class="container-title">
+            <text class="txt-title-main" style="font-size: large;" wx:if="{{title.length>0}}">{{title}}</text>
+            <text class="txt-title-main" style="{{title.length>0?'margin-top: 64rpx;':''}}" wx:if="{{content.length>0}}">{{content}}</text>
+            <view class="container-input" wx:if="{{mode=='edit'}}">
+                <input bindinput="onUserInput" class="input-center-data {{inputstyle}}" maxlength="{{maxlength}}" placeholder="{{placeholder}}" showConfirmBar="{{false}}" type="{{inputtype}}" value="{{value}}"></input>
+            </view>
+        </view>
+        <view class="container-button">
+            <view bindtap="onCancel" class="btn-base btn-cancel" hoverClass="btn-bottom-hover" hoverStartTime="10" hoverStayTime="100" wx:if="{{cancelText.length>0}}"> {{cancelText}} </view>
+            <view bindtap="onConfrim" class="btn-base btn-confirm" hoverClass="btn-bottom-hover" hoverStartTime="10" hoverStayTime="100" wx:if="{{confrimText.length>0}}"> {{confrimText}} </view>
+        </view>
+    </view>
+</van-popup>

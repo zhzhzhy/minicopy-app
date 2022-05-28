@@ -1,0 +1,59 @@
+<view>
+    <view>
+        <devicebar></devicebar>
+    </view>
+    <view class="content">
+        <view class="{{showView?'header_view_hide':'header_view_show'}}">
+            <view style="width:323.5714rpx;height:496rpx;margin:0 auto;">
+                <view style="width:323.5714rpx;height: 450rpx;text-align:center;float:left;position: absolute;">
+                    <image src=" ../../static/img/vipEqu.png" style="width:323.5714rpx;height: 450rpx;"></image>
+                </view>
+                <view class="animation">
+                    <view class="box2"></view>
+                    <view class="box3"></view>
+                </view>
+            </view>
+        </view>
+        <view class="{{vipNum?'header_view_hide':'header_view_show'}}">
+            <view style="width:323.5714rpx;height:496rpx;margin:0 auto;">
+                <view style="width:323.5714rpx;height: 450rpx;text-align:center;float:left;position: absolute;">
+                    <image src=" ../../static/img/cardReader.png" style="width:323.5714rpx;height: 450rpx;"></image>
+                </view>
+                <view style="width:323.5714rpx;height:60rpx;float:left;position: absolute;margin-left:2rpx;margin-top:5rpx;">
+                    <view class="remainingTimes">
+                        <text>剩余{{remainingTimes}}次</text>
+                    </view>
+                </view>
+                <view class="animation">
+                    <view class="box2"></view>
+                    <view class="box3"></view>
+                </view>
+            </view>
+        </view>
+        <view class="search">请换上尼古拉小橙卡</view>
+        <view class="cardType">
+            <view class="{{cardType=='ID'?'ID':'IC'}}">{{cardType}}</view>
+            <view class="tips">
+                <text class="sonType" wx:for="{{cardList}}" wx:key="index">{{item}}</text>
+            </view>
+        </view>
+        <view class="startWriteCard">
+            <van-button bindtap="onGotoWriteCardCall" customStyle="width:160px;height: 40px;font-size:30rpx;border-radius:20px 20px 20px 20px;background:#F5A200;border:1px solid #F5A200;color:#fff;font-weight:500;" type="primary">开始写卡</van-button>
+        </view>
+    </view>
+    <view class="bottom">
+        <view class="bottomBlock">
+            <view class="iconBlock">
+                <icon class="orangeCard"></icon>
+            </view>
+            <view bindtap="onGotoTaobaoBuyCard" class="textBlock">
+                <text decode="true">购买小橙卡 &nbsp;|</text>
+            </view>
+        </view>
+        <view class="problem">
+            <text bindtap="onGotoHelpPageCall">遇到问题?</text>
+            <icon class="doubleArrow"></icon>
+        </view>
+    </view>
+    <dialog-buy-service contentColor="{{1}}" showView="{{modal}}"></dialog-buy-service>
+</view>

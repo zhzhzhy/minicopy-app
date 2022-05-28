@@ -1,0 +1,20 @@
+<view>
+    <view class="empty"></view>
+    <view class="topBlock" wx:for="{{firstBlock}}" wx:key="index">
+        <view class="topTitle">{{item.title}}</view>
+        <view class="topText">
+            <text>{{item.text}}</text>
+        </view>
+    </view>
+    <view class="empty1"></view>
+    <view class="topBlock" wx:for="{{secondBlock}}" wx:key="index">
+        <view class="topTitle">{{item.title}}</view>
+        <view class="topText">
+            <text>{{item.text}}</text>
+        </view>
+    </view>
+    <view bindtap="jump" class="privacyClause">
+        <text>《隐私条款》</text>
+    </view>
+    <view class="bottomBlock"></view>
+</view>

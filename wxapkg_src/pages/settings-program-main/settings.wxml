@@ -1,0 +1,37 @@
+<view>
+    <view class="autoSave">
+        <view class="blockText">卡片数据自动保存</view>
+        <view class="autoSaveSwitch">
+            <van-switch activeColor="#08c264" bind:change="onChange" checked="{{autoSave}}" title=""></van-switch>
+        </view>
+    </view>
+    <view bindtap="sheetShow" class="saveLocation">
+        <view class="blockText">卡片数据保存位置</view>
+        <view class="arrowBlock">本地<icon class="rightArrow"></icon>
+        </view>
+    </view>
+    <view bindtap="unbound" class="saveLocation" style="margin-top:14rpx;">
+        <view class="blockText">读卡器与账号解绑</view>
+        <view class="arrowBlock">
+            <icon class="rightArrow"></icon>
+        </view>
+    </view>
+    <view bindtap="firmwareUpdate" class="saveLocation" style="margin-top:14rpx;">
+        <view class="blockText">固件更新</view>
+        <view class="arrowBlock">
+            <icon class="rightArrow"></icon>
+        </view>
+    </view>
+    <van-action-sheet actions="{{actions}}" round="{{false}}" show="{{show}}">
+        <view class="sheet_title">
+            <text>卡片数据保存位置</text>
+        </view>
+        <view bindtap="getradio" data-id="{{index}}" wx:for="{{sheet}}" wx:key="index">
+            <view class="location">{{item.text}}</view>
+        </view>
+        <view class="emptyBlock"></view>
+        <view bindtap="cancel" class="cancel">
+            <text>取消</text>
+        </view>
+    </van-action-sheet>
+</view>

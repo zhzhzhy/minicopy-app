@@ -1,0 +1,6 @@
+<view>
+    <view class="question">
+        <text bindtap="jumpPage">遇到问题?</text>
+        <icon class="doubleArrow"></icon>
+    </view>
+</view>

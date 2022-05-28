@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-button": "../../miniprogram_npm/@vant/weapp/button/index",
+        "van-action-sheet": "../../miniprogram_npm/@vant/weapp/action-sheet/index",
+        "devicebar": "/components/device-tab-bar/device",
+        "master": "/components/switch-master-mode/master",
+        "add-card": "/components/dialog-add-card/index"
+    }
+}

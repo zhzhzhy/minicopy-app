@@ -1,0 +1,63 @@
+.empty {
+    background: rgba(0,0,0,.1);
+    height: 2rpx;
+    width: 100%;
+}
+
+.topBlock {
+    height: auto;
+    margin-left: 30rpx;
+    margin-right: 20rpx;
+    margin-top: 23rpx;
+    width: 700rpx;
+}
+
+.topTitle {
+    color: #000;
+    font-size: 26rpx;
+    font-weight: 500;
+}
+
+.topText {
+    color: #666;
+    font-size: 24rpx;
+    font-weight: 400;
+    margin-top: 12rpx;
+}
+
+.empty1 {
+    background: #f9f9f9;
+    height: 16rpx;
+    margin-bottom: 20rpx;
+    margin-top: 26rpx;
+    width: 100%;
+}
+
+@media screen and (min-width:375px) {
+    .privacyClause {
+        color: #f5a200;
+        font-size: 24rpx;
+        font-weight: 400;
+        height: 30rpx;
+        margin-top: 60rpx;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .privacyClause {
+        color: #f5a200;
+        font-size: 24rpx;
+        font-weight: 400;
+        height: 30rpx;
+        margin-top: 60rpx;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.bottomBlock {
+    height: 150rpx;
+    width: 100%;
+}

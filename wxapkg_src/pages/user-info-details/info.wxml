@@ -1,0 +1,45 @@
+<view>
+    <view class="topLine"></view>
+    <view class="outsideBlock">
+        <view class="block">
+            <view class="line">
+                <view class="right">
+                    <view class="title">
+                        <text>头像</text>
+                    </view>
+                    <view class="rightIcon">
+                        <icon class="headPortrait" wx:if="{{avatarUrl==''}}"></icon>
+                        <image src="{{avatarUrl}}" style="width: 112rpx;height: 112rpx;border-radius: 50%;" wx:if="{{avatarUrl}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="none"></view>
+    <view class="outsideBlocks">
+        <view class="block">
+            <view class="lines">
+                <view class="right">
+                    <view class="title">
+                        <text>手机号码</text>
+                    </view>
+                    <view class="rightIcons">
+                        <view class="phoneNumber">
+                            <text class="rightText">{{phone}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="contaniner" wx:if="{{phone}}">
+        <view bindtap="logOut" class="btn">
+            <van-button customStyle="width:320rpx;height: 80rpx;background: rgba(245, 162, 0, 0.1);border-radius: 20px 20px 20px 20px;font-size:30rpx;font-weight:500;color:#f5a200;opacity:1;border:none;">退出登录</van-button>
+        </view>
+    </view>
+    <view class="text" wx:else>
+        <view bindtap="logIn" class="btn">
+            <van-button customStyle="width:320rpx;height: 80rpx;background: rgba(245, 162, 0, 0.1);border-radius: 20px 20px 20px 20px;font-size:30rpx;font-weight:500;color:#f5a200;opacity:1;border:none;">请先登录</van-button>
+        </view>
+    </view>
+</view>

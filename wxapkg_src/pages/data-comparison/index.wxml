@@ -1,0 +1,19 @@
+<view>
+    <view>
+        <view bindtap="get" class="data1">数据1：{{nick1}}</view>
+        <view bindtap="repare" class="data2">数据2：{{nick2}}</view>
+        <view class="line" style="margin-top:40rpx;margin-bottom:25rpx;"></view>
+        <view class="block" data-id="{{key}}" wx:for="{{baseList}}" wx:for-index="key" wx:key="index">
+            <view class="block0Title">扇区：<text>{{item.sector}}</text>
+                <text decode="true"> &nbsp; | &nbsp; </text>块：<text>{{item.block}}</text>
+            </view>
+            <view class="identical" wx:if="{{item.same}}">相同</view>
+            <view class="dataBlock">
+                <rich-text nodes="{{item.data[0]}}" style="margin-top:-200rpx;"></rich-text>
+                <view class="rich_text_top"></view>
+                <rich-text nodes="{{item.data[1]}}"></rich-text>
+            </view>
+            <view class="line" style="margin-top:35rpx;"></view>
+        </view>
+    </view>
+</view>

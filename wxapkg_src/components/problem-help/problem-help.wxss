@@ -1,0 +1,18 @@
+.question {
+    bottom: 60rpx;
+    color: #f5a200;
+    font-size: 28rpx;
+    height: 50rpx;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.doubleArrow {
+    background: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0ibTI1MC4wNiAyNTYtNDUuMjYgNDUuMjYgMjMxLjQyNCAyMzEuNDI1TDIwNC44IDc2NC4xMDlsNDUuMjYgNDUuMzEyIDI0MC40ODctMjQwLjQ4N2E1MS4yIDUxLjIgMCAwIDAgMC03Mi40NDhMMjUwLjA2MSAyNTZ6TTUxMiAzMDEuMjYgNTU3LjI2IDI1NmwyNDAuNDg3IDI0MC40ODZhNTEuMiA1MS4yIDAgMCAxIDAgNzIuNDQ4TDU1Ny4yNjEgODA5LjQyMSA1MTIgNzY0LjE2bDIzMS40MjQtMjMxLjQyNEw1MTIgMzAxLjIxeiIgZmlsbD0iI0Y1QTIwMCIvPjwvc3ZnPg==");
+    background-size: 40rpx 40rpx;
+    height: 40rpx;
+    margin-top: 0rpx;
+    position: absolute;
+    width: 40rpx;
+}

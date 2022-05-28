@@ -1,0 +1,49 @@
+<van-popup closeable round bind:close="onUserClose" closeIcon="/static/img/close.svg" customStyle="background: #1A1D26;" duration="100" position="bottom" show="{{show}}">
+    <view class="container-dialog-main">
+        <view class="container-dialog-title">
+            <text class="txt-title">修改0区卡号</text>
+        </view>
+        <view class="container-opera-main">
+            <view class="container-opera-item">
+                <view class="container-opera-title">
+                    <text>模式</text>
+                </view>
+                <view class="container-opera-detail">
+                    <view bindtap="onTabClick" class="btn-tab-switch-base {{modeSelected==index?'btn-tab-switch-is-selected':'btn-tab-switch-no-selected'}}" data-id="{{index}}" wx:for="{{modeList}}" wx:key="index">
+                        <text>{{item}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="container-opera-item" wx:for="{{inputList}}" wx:key="index">
+                <view class="container-opera-title">
+                    <text>{{item.title}}</text>
+                </view>
+                <view class="container-opera-detail">
+                    <view class="container-tag-uid-size" wx:if="{{item.size}}">
+                        <text>{{item.size}} BYTE</text>
+                    </view>
+                    <view class="container-input-item">
+                        <input bindinput="onUserInput" class="input-item-style" data-id="{{item.index}}" maxlength="{{item.maxlength}}" type="text" value="{{item.value}}"></input>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="explainBlock">
+            <view class="explain">说明</view>
+            <view class="bottomExplainText">
+                <text>可使用本功能创建想要的0区0块，将对应的0区0块写入到对应的
+卡数据内，以达到更改ATQA SAK等数值要求。
+一般情况下不需要用户更改SAK或者ATQA，仅限读卡器检测卡片
+类型时才需要使用，错误的更改可能导致不认卡。</text>
+            </view>
+        </view>
+        <view class="doubleBtn">
+            <view class="leftBtn">
+                <button bindtap="onUserCancel" class="bottomBtnCancel">取消</button>
+            </view>
+            <view class="rightBtn">
+                <button bindtap="onUserConfirm" class="bottomBtnConfirm">确认修改</button>
+            </view>
+        </view>
+    </view>
+</van-popup>

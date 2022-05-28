@@ -1,0 +1,79 @@
+<view>
+    <view class="bg"></view>
+    <view class="blackBlock">
+        <image class="blackImg" src="../../static/img/vipImg.png"></image>
+    </view>
+    <view class="vipMonth">
+        <view bindtap="buy" class="oneMonth" data-id="{{index}}" wx:for="{{products}}" wx:key="index">
+            <view class="monthNumber">
+                <text>{{item.product_month}}</text>
+            </view>
+            <view class="vipMC">
+                <text>{{item.product_type}}</text>
+            </view>
+            <view class="moneyBlock">
+                <text class="money">￥</text>
+                <text class="Number">{{item.product_price}}</text>
+            </view>
+            <view class="purchase">
+                <van-button customStyle="width:156rpx;height: 30px;font-size:28rpx;border-radius:32px 32px 32px 32px;background:#F5A200;color:#664002;font-weight:600;background: linear-gradient(90deg, #FFE9C8 0%, #FEDEA6 47%, #FFCF8B 100%, #FFD389 100%);border:none;" type="default">购买</van-button>
+            </view>
+        </view>
+    </view>
+    <view class="vipContent">
+        <view class="vipRAIBlock">
+            <image class="vipRAI" src="../../static/img/bg_vip3.svg"></image>
+        </view>
+    </view>
+    <view class="vipTable">
+        <view class="table">
+            <view class="tr bg-w">
+                <view class="th RAI">权益</view>
+                <view class="th ordinaryUser">普通用户</view>
+                <view class="th vipUser">VIP用户</view>
+            </view>
+            <view class="tr">
+                <view class="td RAIText">
+                    <view class="tdText">
+                        <text>云解码读卡</text>
+                    </view>
+                    <view class="tdText3">
+                        <text>云存储卡包</text>
+                    </view>
+                    <view class="cardRead">
+                        <view class="cardReadText1">
+                            <text>读卡额日限＜50张</text>
+                        </view>
+                        <view class="cardReadText2">
+                            <text>间隔＜60秒</text>
+                        </view>
+                    </view>
+                    <view class="cardRead1">
+                        <view class="cardReadText1">
+                            <text>读卡额日限＜100张</text>
+                        </view>
+                        <view class="cardReadText2">
+                            <text>间隔＜30秒</text>
+                        </view>
+                    </view>
+                    <view class="tdText2">
+                        <text>无限次数写卡</text>
+                    </view>
+                    <view class="tdText">
+                        <text>极速写卡</text>
+                    </view>
+                </view>
+                <view class="td orUserText">
+                    <view class="tdText1" wx:for="{{listData}}" wx:key="index">
+                        <icon class="{{item.text}}"></icon>
+                    </view>
+                </view>
+                <view class="td vipUserText">
+                    <view class="tdText1" wx:for="{{listData}}" wx:key="index">
+                        <icon class="{{item.type}}"></icon>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

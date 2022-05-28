@@ -1,0 +1,27 @@
+<van-popup bind:close="onClose" customStyle="width: 88%; border-radius: 24rpx; background: #1A1D26;margin-top:-100rpx;" duration="100" show="{{show}}">
+    <view style="display: flex; flex-direction: column; width: 100%;">
+        <view style="height: 136rpx; width: 100%; display: flex; align-items: center; justify-content: center;">
+            <text class="txt-top-main-title">扇区{{sector}} | 块{{block}}{{mode==1?'(密码区)':''}}</text>
+        </view>
+        <view class="container-center" style="{{mode!=0?'display: none;':''}}">
+            <view class="container-input" style="flex: 1; margin-left: 56rpx; height: 118rpx;">
+                <textarea bindinput="onUserInput" class="input-center-data" disableDefaultPadding="{{true}}" maxlength="32" showConfirmBar="{{false}}" type="text" value="{{value}}"></textarea>
+            </view>
+            <text class="{{hexLength||inputStatus?'txt-input-status':''}} {{inputStatus==1?'icon-input-normal':''}} {{inputStatus==2?'icon-input-error':''}}">{{hexLength?hexLength:''}}</text>
+        </view>
+        <view class="container-center" style="flex-direction: column; {{mode!=1?'display: none;':''}}">
+            <view class="container-center" style="margin-top: 16rpx;" wx:for="{{trilMode}}" wx:key="index">
+                <text class="txt-tril-title">{{item.title}}</text>
+                <view class="container-input">
+                    <input bindinput="onUserInput" class="input-center-data {{item.style}}" data-id="{{index}}" maxlength="{{item.maxlen}}" showConfirmBar="{{false}}" type="text" value="{{item.value}}"></input>
+                </view>
+                <text class="txt-input-status {{item.status==1?'icon-input-normal':''}} {{item.status==2?'icon-input-error':''}}">{{item.length?item.length:''}}</text>
+            </view>
+        </view>
+        <view class="container-bottom">
+            <view bindtap="onCancelCallback" class="btn-bottom-item btn-bottom-cancel" hoverClass="btn-bottom-hover" hoverStartTime="10" hoverStayTime="100">取消</view>
+            <view class="btn-bottom-item-split-vertical"></view>
+            <view bindtap="onConfirmCallback" class="btn-bottom-item btn-bottom-confirm {{inputStatus!=1?'btn-bottom-confirm-disabled: ':''}}" hoverClass="{{inputStatus==1?'btn-bottom-hover':''}}" hoverStartTime="10" hoverStayTime="100">确认修改</view>
+        </view>
+    </view>
+</van-popup>

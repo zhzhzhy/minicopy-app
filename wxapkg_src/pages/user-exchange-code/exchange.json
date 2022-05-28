@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "van-field": "../../miniprogram_npm/@vant/weapp/field/index",
+        "clearInput": "../../components/clearInput/clearInput"
+    },
+    "navigationBarTitleText": "填写兑换码"
+}

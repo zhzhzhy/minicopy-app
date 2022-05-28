@@ -1,0 +1,36 @@
+<view>
+    <view class="itemBlock">
+        <view bindtap="getradio" data-id="{{index}}" wx:for="{{products}}" wx:key="index">
+            <view class="{{item.checked?'itemChecked':'itemNoChecked'}}">
+                <view class="fiftyText">
+                    <text>{{item.product_name}}</text>
+                </view>
+                <view class="fiftyRight">
+                    <view class="line"></view>
+                    <text class="Number">{{item.product_price}} 元</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="leftLineBlock">
+        <view class="leftLineoutsideBlock"></view>
+        <view class="explainBlock">购买次卡使用说明：</view>
+    </view>
+    <view class="explainText">
+        <view>
+            <text>1.当您不想购买VIP时，您也可以单独购买写卡次数。</text>
+        </view>
+        <view style="margin-top:10rpx;">
+            <text>2.每写入成功一张卡，即消耗一次写卡次数。</text>
+        </view>
+        <view style="margin-top:10rpx;">
+            <text>3.写卡次数永久有效，写卡失败或重复写卡不会消耗次数。</text>
+        </view>
+        <view style="margin-top:10rpx;">
+            <text>4.您也可以通过金币积分免费兑换写卡次数</text>
+        </view>
+    </view>
+    <view bindtap="buyNow" style="position: absolute;bottom:78rpx;width:662rpx;height:80rpx;margin-left:44rpx;margin-right:44rpx;text-align:center;">
+        <van-button customStyle="width:662rpx;height: 80rpx;font-size:28rpx;border-radius:32px 32px 32px 32px;background:#F5A200;color:#ffffff;font-weight:600;background: #f5a200;" type="default">立即购买</van-button>
+    </view>
+</view>

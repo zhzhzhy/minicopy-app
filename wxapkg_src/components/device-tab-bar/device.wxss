@@ -1,0 +1,55 @@
+.top-line {
+    background: rgba(0,0,0,.1);
+    height: 2rpx;
+    width: 100%;
+}
+
+.content-bar {
+    background: #fff;
+    height: 40rpx;
+    margin-left: 30rpx;
+    margin-right: 24rpx;
+    margin-top: 32rpx;
+}
+
+.content-icon-text {
+    height: 40rpx;
+    line-height: 40rpx;
+    width: 100%;
+}
+
+.badge-left-connected {
+    background: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTY0LjM4MyA1MTJhNDM4IDQzOCAwIDEgMCA4OTUuMjM0IDAgNDM4IDQzOCAwIDEgMC04OTUuMjM0IDBaIiBmaWxsPSIjMWFmYTI5Ii8+PC9zdmc+");
+    background-size: 16rpx 16rpx;
+}
+
+.badge-left-connected,.badge-left-disconnected {
+    float: left;
+    height: 16rpx;
+    margin-left: 0rpx;
+    margin-top: 13rpx;
+    width: 16rpx;
+}
+
+.badge-left-disconnected {
+    background: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTY0LjM4MyA1MTJhNDM4IDQzOCAwIDEgMCA4OTUuMjM0IDAgNDM4IDQzOCAwIDEgMC04OTUuMjM0IDBaIiBmaWxsPSIjZjU2MzExIi8+PC9zdmc+");
+    background-size: 16rpx 16rpx;
+}
+
+.content-text {
+    color: gray;
+    float: left;
+    font-size: 26rpx;
+    height: 35rpx;
+    margin-left: 20rpx;
+    width: 300rpx;
+}
+
+.arrow-right {
+    background: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTM4NCA4MTkuMmMtMTUuMzYgMC0yNS42LTUuMTItMzUuODQtMTUuMzYtMjAuNDgtMjAuNDgtMjAuNDgtNTEuMiAwLTcxLjY4TDU2OC4zMiA1MTIgMzQ4LjE2IDI5MS44NGMtMjAuNDgtMjAuNDgtMjAuNDgtNTEuMiAwLTcxLjY4czUxLjItMjAuNDggNzEuNjggMGwyNTYgMjU2YzIwLjQ4IDIwLjQ4IDIwLjQ4IDUxLjIgMCA3MS42OGwtMjU2IDI1NkM0MDkuNiA4MTQuMDggMzk5LjM2IDgxOS4yIDM4NCA4MTkuMnoiIGZpbGw9IiM5OTkiLz48L3N2Zz4=");
+    background-size: 40rpx 40rpx;
+    float: right;
+    height: 40rpx;
+    margin-right: 8rpx;
+    width: 40rpx;
+}

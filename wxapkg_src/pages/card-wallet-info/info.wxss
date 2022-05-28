@@ -1,0 +1,104 @@
+.header_view_hide {
+    display: none;
+}
+
+.header_view_show {
+    display: block;
+}
+
+.container-tag-info {
+    border-radius: 12rpx 12rpx 12rpx 12rpx;
+    box-sizing: border-box;
+    color: #fff;
+    height: auto;
+    margin-left: 44rpx;
+    margin-right: 44rpx;
+    margin-top: 68rpx;
+    padding-bottom: 32rpx;
+    width: 88%;
+}
+
+.bg-tag-info-type-ic {
+    background: linear-gradient(180deg,#f5a200,rgba(245,162,0,.8));
+}
+
+.bg-tag-info-type-id {
+    background: linear-gradient(180deg,#008ef5,rgba(0,142,245,.8));
+}
+
+.container-dump-nick {
+    align-content: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: center;
+    padding-top: 40rpx;
+    width: 100%;
+}
+
+.txt-dump-nick {
+    box-sizing: border-box;
+    color: #fff;
+    flex: 1;
+    font-size: 34rpx;
+    font-weight: 600;
+    letter-spacing: 2rpx;
+    min-height: 100%;
+    padding-left: 28rpx;
+    text-align: left;
+    width: 100%;
+}
+
+.btn-edit-name {
+    background: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTY2MS40MDIgMjIyLjA1NGE3OS4zNiA3OS4zNiAwIDAgMC0xMTEuNDYzIDEyLjY5OEwyMjIuMDU0IDY0Ny4wMTRhNzkuMzYgNzkuMzYgMCAwIDAtMTUuMjU3IDY3LjA3MmwyNy43NSAxMjEuODU2YTM4LjQgMzguNCAwIDAgMCAzNy41ODEgMjkuODVsMTI0LjkyOC0uMzU4YTc5LjM2IDc5LjM2IDAgMCAwIDYxLjk1Mi0yOS45NTJsMzI3LjgzNC00MTIuMzE0YTc5LjM2IDc5LjM2IDAgMCAwLTEyLjY5OC0xMTEuNDYybC0xMTIuNjkxLTg5LjY1MnptLTUxLjM1NCA2MC41MTlhMi41NiAyLjU2IDAgMCAxIDMuNTg0LS40MWwxMTIuNjkxIDg5LjZhMi41NiAyLjU2IDAgMCAxIC40MSAzLjU4NEwzOTguODQ4IDc4Ny43MTJhMi41NiAyLjU2IDAgMCAxLTEuOTk3Ljk3M2wtOTQuMjA4LjI1Ni0yMC45OTItOTEuOTA0YTIuNTYgMi41NiAwIDAgMSAuNTEyLTIuMTVsMzI3Ljg4NS00MTIuMjYzek01NDQgNzgwLjU0NGEzOC40IDM4LjQgMCAwIDAgMCA3Ni44aDI0NS43NmEzOC40IDM4LjQgMCAxIDAgMC03Ni44SDU0NHoiIGZpbGw9IiNGRkYiLz48L3N2Zz4=");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 40rpx 40rpx;
+    margin-right: 24rpx;
+    min-height: 40rpx;
+    width: 40rpx;
+}
+
+.container-info-details {
+    margin-left: 15rpx;
+    margin-top: 126rpx;
+}
+
+.txt-tag-info-detail {
+    color: #fff;
+    font-size: 24rpx;
+    font-weight: 500;
+    margin-left: 15rpx;
+    margin-top: 15rpx;
+    opacity: .7;
+}
+
+.container-center-button {
+    margin-top: 2.2%;
+}
+
+.container-center-item {
+    padding-left: 20rpx;
+    padding-right: 10rpx;
+    width: 95%;
+}
+
+.container-bottom-button {
+    bottom: 5%;
+    height: auto;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width:369px) {
+    .container-bottom-button {
+        bottom: 2%;
+        position: absolute;
+    }
+}
+
+.input {
+    color: #333;
+}

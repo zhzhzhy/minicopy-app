@@ -1,0 +1,24 @@
+.title {
+    color: #000;
+    font-weight: bolder;
+}
+
+@media screen and (min-width:375px) {
+    .bg {
+        background: #f9f9f9;
+        margin: -5% -4% -30rpx;
+        padding: 28rpx 3% 22rpx;
+        position: relative;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .bg {
+        background: #f9f9f9;
+        margin-left: -6%;
+        margin-right: -6%;
+        margin-top: -5%;
+        padding: 28rpx 3% 22rpx 5%;
+        position: relative;
+    }
+}

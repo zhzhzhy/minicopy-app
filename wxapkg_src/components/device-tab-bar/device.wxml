@@ -1,0 +1,13 @@
+<view>
+    <view class="top-line"></view>
+    <view bindtap="onTabClick" class="content-bar">
+        <view class="content-icon-text">
+            <icon class="{{connected?'badge-left-connected':'badge-left-disconnected'}}"></icon>
+            <view class="content-text">
+                <text>读卡器{{connected?'已连接':'未连接'}}</text>
+            </view>
+            <icon class="arrow-right" wx:if="{{!connected}}"></icon>
+            <slot wx:if="{{showsub}}"></slot>
+        </view>
+    </view>
+</view>

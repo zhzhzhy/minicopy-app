@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "devicebar": "/components/device-tab-bar/device",
+        "tabbar": "/components/custom-tab-bar/index"
+    },
+    "navigationBarTitleText": "商城"
+}

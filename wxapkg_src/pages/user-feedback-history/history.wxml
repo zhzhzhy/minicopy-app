@@ -1,0 +1,19 @@
+<view class="content">
+    <view class="topLine"></view>
+    <view class="block" wx:if="{{dbData!==''}}" wx:for="{{dbData}}" wx:key="index">
+        <view>
+            <text class="describes">问题描述：</text>
+            <text class="question">{{item.feedback_content}}</text>
+        </view>
+        <view class="time">
+            <text class="describes">提交时间：</text>
+            <text class="question">{{item.feedback_time}}</text>
+        </view>
+    </view>
+    <view class="noData" wx:if="{{dbData==''}}">
+        <view class="noDataImgBlock">
+            <image class="noDataImg" src="../../static/img/noFeedbackRecord.png"></image>
+        </view>
+        <view class="noDataText">暂无反馈记录</view>
+    </view>
+</view>

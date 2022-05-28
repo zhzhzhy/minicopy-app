@@ -1,0 +1,131 @@
+.txt-top-main-title {
+    color: #fff;
+    font-size: 30rpx;
+    font-weight: 700;
+    letter-spacing: 2rpx;
+    line-height: 36rpx;
+    text-shadow: 0rpx 16rpx 16rpx rgba(0,0,0,.25);
+}
+
+.container-center {
+    align-items: center;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    width: 100%;
+}
+
+.container-input {
+    background: #0f1012;
+    border-radius: 4rpx;
+    box-sizing: border-box;
+    flex: 0.8;
+    padding: 20rpx 16rpx;
+    width: 100%;
+}
+
+.input-center-data {
+    box-sizing: border-box;
+    color: #f5f5f5;
+    font-family: siyuan,monospace;
+    font-size: 32rpx;
+    font-weight: 500;
+    height: 100%;
+    letter-spacing: 2rpx;
+    line-height: 40rpx;
+    text-align: left;
+    width: 100%;
+}
+
+.txt-input-status {
+    color: #f56311;
+    font-size: 24rpx;
+    font-weight: 500;
+    height: 30rpx;
+    line-height: 25rpx;
+    margin-left: 26rpx;
+    margin-right: 26rpx;
+    width: 30rpx;
+}
+
+.icon-input-normal {
+    background: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGRlZnM+PHN0eWxlPkBmb250LWZhY2V7Zm9udC1mYW1pbHk6ZmVlZGJhY2staWNvbmZvbnQ7c3JjOnVybCgvL2F0LmFsaWNkbi5jb20vdC9mb250XzEwMzExNThfdTY5dzh5aHhkdS53b2ZmMj90PTE2MzAwMzM3NTk5NDQpIGZvcm1hdCgmcXVvdDt3b2ZmMiZxdW90OyksdXJsKC8vYXQuYWxpY2RuLmNvbS90L2ZvbnRfMTAzMTE1OF91Njl3OHloeGR1LndvZmY/dD0xNjMwMDMzNzU5OTQ0KSBmb3JtYXQoJnF1b3Q7d29mZiZxdW90OyksdXJsKC8vYXQuYWxpY2RuLmNvbS90L2ZvbnRfMTAzMTE1OF91Njl3OHloeGR1LnR0Zj90PTE2MzAwMzM3NTk5NDQpIGZvcm1hdCgmcXVvdDt0cnVldHlwZSZxdW90Oyl9PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTgxNy43NSAxOTguNzQxIDkyOS41MzUgMzEzLjI2bC01NDUuMjggNTMyLjEzOEw5OC4zODkgNTcyLjMzMWwxMTAuNTA3LTExNS42MjcgMTc0LjA4IDE2Ni4yMyA0MzQuNzczLTQyNC4yNzh6IiBmaWxsPSIjMDdDMTYwIi8+PC9zdmc+");
+    background-size: 30rpx 30rpx;
+}
+
+.icon-input-error {
+    background: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGRlZnM+PHN0eWxlPkBmb250LWZhY2V7Zm9udC1mYW1pbHk6ZmVlZGJhY2staWNvbmZvbnQ7c3JjOnVybCgvL2F0LmFsaWNkbi5jb20vdC9mb250XzEwMzExNThfdTY5dzh5aHhkdS53b2ZmMj90PTE2MzAwMzM3NTk5NDQpIGZvcm1hdCgmcXVvdDt3b2ZmMiZxdW90OyksdXJsKC8vYXQuYWxpY2RuLmNvbS90L2ZvbnRfMTAzMTE1OF91Njl3OHloeGR1LndvZmY/dD0xNjMwMDMzNzU5OTQ0KSBmb3JtYXQoJnF1b3Q7d29mZiZxdW90OyksdXJsKC8vYXQuYWxpY2RuLmNvbS90L2ZvbnRfMTAzMTE1OF91Njl3OHloeGR1LnR0Zj90PTE2MzAwMzM3NTk5NDQpIGZvcm1hdCgmcXVvdDt0cnVldHlwZSZxdW90Oyl9PC9zdHlsZT48L2RlZnM+PHBhdGggZD0ibTYxNy45MzMgNTE2LjA5NiAyNzEuOTc0IDI3Mi4wMjYtMTAxLjc4NSAxMDEuNzg1LTI3Mi4wMjYtMjcxLjk3NC0yNzEuOTc0IDI3MS45NzRMMTQyLjIzNCA3ODguMDdsMjcyLjAyNS0yNzEuOTc0TDEzOS4yMTMgMjQxLjA1IDI0MS4xIDEzOS4xNjJsMjc0Ljk5NSAyNzUuMDk3IDI3NS4wNDYtMjc1LjA0Nkw4OTIuOTggMjQwLjk5OCA2MTcuOTMzIDUxNi4wNDV2LjA1MXoiIGZpbGw9IiNGNTYzMTEiLz48L3N2Zz4=");
+    background-size: 30rpx 30rpx;
+}
+
+.container-bottom {
+    align-items: center;
+    border-top: 2rpx solid hsla(0,0%,100%,.05);
+    display: flex;
+    flex-direction: row;
+    height: 102rpx;
+    justify-content: center;
+    margin-top: 60rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-bottom-item-split-vertical {
+    background: #fff;
+    height: 100%;
+    opacity: .05;
+    width: 2rpx;
+}
+
+.btn-bottom-item {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    font-size: 30rpx;
+    font-weight: 700;
+    height: 100%;
+    justify-content: center;
+    letter-spacing: 2rpx;
+    line-height: 30rpx;
+    width: 100%;
+}
+
+.btn-bottom-hover {
+    background: #0f1012;
+}
+
+.btn-bottom-cancel {
+    color: #fff;
+    opacity: .6;
+}
+
+.btn-bottom-confirm {
+    color: #f5a200;
+}
+
+.btn-bottom-confirm-disabled {
+    color: rgba(245,162,0,.3);
+}
+
+.txt-tril-title {
+    align-items: center;
+    color: #838b99;
+    flex: 0.24;
+    font-size: 28rpx;
+    font-weight: 500;
+    justify-content: center;
+    line-height: 28rpx;
+    text-align: center;
+}
+
+.mifare-data-block-trail-keya {
+    color: #adfaa6;
+}
+
+.mifare-data-block-trail-ctl {
+    color: #f7dd57;
+}
+
+.mifare-data-block-trail-keyb {
+    color: #feb2ff;
+}

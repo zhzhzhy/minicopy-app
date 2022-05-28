@@ -1,0 +1,31 @@
+<view>
+    <view>
+        <devicebar></devicebar>
+    </view>
+    <view class="card">
+        <view class="logo">
+            <image class="logoImg" src="../../static/img/writeCardLogo.svg"></image>
+        </view>
+        <view class="progressC">
+            <view class="circle">
+                <van-circle color="#ffffff" layerColor="#f8be4c" size="{{circleWidth}}" value="{{progressStep}}">
+                    <text style="color:#ffffff; height: 100%;">{{progressStep}}%</text>
+                </van-circle>
+            </view>
+        </view>
+        <view class="cardNumberBlock">
+            <view class="cardNumber">
+                <text>卡号：{{cardNumber}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="cardReadText">
+        <view class="readCardTime">
+            <text>正在写卡...大约需要5秒钟</text>
+        </view>
+        <view class="remain">
+            <text>写卡期间请勿移动卡片</text>
+        </view>
+    </view>
+    <backitp bindback="onUserBack" canback="{{false}}"></backitp>
+</view>

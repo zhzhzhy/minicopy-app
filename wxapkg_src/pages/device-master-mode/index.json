@@ -1,0 +1,18 @@
+{
+    "usingComponents": {
+        "van-loading": "../../miniprogram_npm/@vant/weapp/loading/index",
+        "data-editor": "/components/dialog-m1-data-editor/editor",
+        "firm-editor": "/components/dialog-m1-firm-editor/editor",
+        "save-data": "../../components/dialog-tag-nick-editor/editor",
+        "write-result": "../../components/dialog-tag-write-result/result",
+        "write-progress": "../../components/dialog-write-progress/progress",
+        "message-dark": "../../components/dialog-msg-box-dark/dialog",
+        "dialog-buy-service": "/components/dialog-buy-service/index",
+        "backitp": "/components/back-intercept/back"
+    },
+    "navigationBarTitleText": "专家模式",
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#1A1D22",
+    "disableScroll": true
+}

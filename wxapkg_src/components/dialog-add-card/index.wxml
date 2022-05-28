@@ -1,0 +1,28 @@
+<view wx:if="{{showDailog}}">
+    <view class="commodity_screen"></view>
+    <view class="commodity_attr_box">
+        <view class="van_action_left_title">添加卡片</view>
+        <view class="van_action_close">
+            <icon bindtap="close" class="close"></icon>
+        </view>
+        <view class="btnTabBlock">
+            <view class="van_action_left_text1">卡片类型</view>
+            <view bindtap="model" class="{{modelBackground=='IC'?'btnTab':'NoBtnTab'}}" data-id="{{1}}" style="margin-left:45%;">IC卡</view>
+            <view bindtap="model" class="{{modelBackground=='ID'?'btnTab':'NoBtnTab'}}" data-id="{{2}}">ID卡</view>
+        </view>
+        <view class="inputBlock">
+            <view class="van_action_left_text1">卡片名称</view>
+            <view class="btnTabInputBlock">
+                <input bindinput="btnTabInput" class="btnTabInput" maxlength="12" placeholder="请输入卡片名称" placeholderClass="placeholderClass" type="text" value=""></input>
+            </view>
+        </view>
+        <view class="doubleBtn">
+            <view class="leftBtn">
+                <button bindtap="cancel" class="bottomBtnCancel">取消</button>
+            </view>
+            <view class="rightBtn">
+                <button bindtap="confirm" class="bottomBtnConfirm">确定</button>
+            </view>
+        </view>
+    </view>
+</view>

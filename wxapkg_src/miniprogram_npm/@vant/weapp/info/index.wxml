@@ -1,0 +1,2 @@
+<view class="van-info {{utils.bem( 'info',{dot:dot} )}} custom-class" style="{{customStyle}}" wx:if="{{info!==null&&info!==''||dot}}">{{dot?'':info}}</view>
+<wxs module="utils" src="../wxs/utils.wxs" />

@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "van-cell": "../../miniprogram_npm/@vant/weapp/cell/index",
+        "van-button": "../../miniprogram_npm/@vant/weapp/button/index",
+        "devicebar": "/components/device-tab-bar/device",
+        "master": "/components/switch-master-mode/master",
+        "save-data": "../../components/dialog-tag-nick-editor/editor"
+    },
+    "navigationBarTitleText": "卡包详情"
+}

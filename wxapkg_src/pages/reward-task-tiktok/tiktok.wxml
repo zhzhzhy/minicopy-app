@@ -1,0 +1,25 @@
+<view>
+    <view class="topLine"></view>
+    <van-cell-group>
+        <van-field bind:change="username" errorMessage="{{usernameError}}" errorMessageAlign="right" inputAlign="right" label="姓名" value="{{username}}" placeholder="我的名字"></van-field>
+        <van-field bind:change="contactImformation" errorMessageAlign="right" inputAlign="right" label="联系方式" maxlength="11" placeholder="请输入" type="number" value="{{contactImformation}}"></van-field>
+        <van-field bind:change="tiktokNumber" errorMessage="{{tiktokNumberError}}" errorMessageAlign="right" inputAlign="right" label="抖音账号" placeholder="请输入" type="number" value="{{tiktokNumber}}"></van-field>
+        <van-field bind:change="videoTitle" inputAlign="right" label="视频标题" value="{{videoTitle}}" placeholder="请输入"></van-field>
+        <van-field bind:change="fansNumber" inputAlign="right" label="粉丝数量" value="{{fansNumber}}" placeholder="请输入" type="number"></van-field>
+        <van-field bind:change="videoLike" inputAlign="right" label="视频点赞数" value="{{videoLike}}" placeholder="请输入" type="number"></van-field>
+    </van-cell-group>
+    <view class="empty"></view>
+    <view class="upImgBlock">
+        <view>
+            <text class="upImgText">上传图片</text>
+            <text class="upImgRemain">上传视频播放页截图<text>{{imgLength}}/4</text>
+            </text>
+        </view>
+        <view class="upImg">
+            <van-uploader accept="image" bind:after-read="afterRead" bind:delete="deleteImage" class="van_uploader" fileList="{{fileList}}" maxCount="4" multiple="true"></van-uploader>
+        </view>
+    </view>
+    <view style="position:absolute;margin-top:266rpx;margin-bottom:100rpx;width:100%;height:100rpx;text-align:center;">
+        <van-button bindtap="submit" customStyle="width:90%;height: 40px;font-size:30rpx;border-radius:20px 20px 20px 20px;background:#F5A200;border:1px solid #F5A200;color:#fff;font-weight:500;" type="primary">提交</van-button>
+    </view>
+</view>

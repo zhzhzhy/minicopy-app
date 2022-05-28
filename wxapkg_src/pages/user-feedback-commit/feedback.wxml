@@ -1,0 +1,34 @@
+<view>
+    <view class="topLine"></view>
+    <view class="questionBlock">问题和意见反馈</view>
+    <view class="section">
+        <textarea bindblur="bindTextAreaBlur" bindinput="limitWord" class="textarea" maxlength="500" placeholder="请输入您要反馈的问题"></textarea>
+        <view class="block">
+            <view class="textNumber">
+                <text>{{currentNoteLen}}/500</text>
+            </view>
+        </view>
+    </view>
+    <view class="upImgBlock">
+        <view>
+            <text class="upImgText" decode="true">上传图片&nbsp;&nbsp;<text class="upImgRemain">{{imgLength}}/4</text>
+            </text>
+        </view>
+        <view class="upImg">
+            <van-uploader accept="image" bind:after-read="afterRead" bind:delete="deleteImage" class="van_uploader" fileList="{{fileList}}" maxCount="4" multiple="true"></van-uploader>
+        </view>
+    </view>
+    <view class="contactInformation">联系手机</view>
+    <view>
+        <input bindinput="input" placeholder="填写您的手机号码或邮箱，便于与您联系" type="text"></input>
+    </view>
+    <view class="submit">
+        <van-button bindtap="submit" customStyle="width:90%;height: 40px;font-size:30rpx;border-radius:20px 20px 20px 20px;background:#F5A200;border:1px solid #F5A200;color:#fff;font-weight:500;" type="primary">提交</van-button>
+    </view>
+    <view bindtap="record" class="RecordBlock">
+        <view class="RecordText">
+            <text>反馈记录</text>
+            <image class="RecordImg" src="../../static/img/doubleArrow.png"></image>
+        </view>
+    </view>
+</view>

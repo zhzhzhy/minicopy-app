@@ -1,0 +1,29 @@
+<view>
+    <view>
+        <devicebar showcontent="true">
+            <master></master>
+        </devicebar>
+    </view>
+    <view class="container-tag-info {{taginfo.style}}" wx:if="{{taginfo}}">
+        <view class="container-dump-nick">
+            <view class="txt-dump-nick">{{taginfo.nick}}</view>
+            <view bindtap="onUserEditNameCall" class="btn-edit-name"></view>
+        </view>
+        <view class="container-info-details">
+            <view forItem="item" wx:for="{{taginfo.detail}}" wx:key="index">
+                <view class="txt-tag-info-detail">{{item}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="container-center-button">
+        <view wx:for="{{btnList}}" wx:key="index">
+            <view class="container-center-item">
+                <van-cell isLink bindtap="{{item.bindtap}}" border="{{false}}" title="{{item.title}}" titleStyle="color:#333333;font-size:30rpx;letter-spacing:2rpx;font-weight:400;" value="{{item.value}}"></van-cell>
+            </view>
+        </view>
+    </view>
+    <view class="container-bottom-button">
+        <van-button bindtap="onUserGotoWriteTagCall" customStyle="width:160px;height: 40px;font-size:30rpx;border-radius:20px 20px 20px 20px;background:#F5A200;border:1px solid #F5A200;color:#fff;font-weight:500;" type="primary">前往写卡</van-button>
+    </view>
+    <save-data bind:cancel="onUserCancelNameEdit" bind:confirm="onUserConfirmNameEdit" show="{{nameEditor.showNameEditor}}" theme="light" title="保存数据" value="{{nameEditor.defaultName}}"></save-data>
+</view>

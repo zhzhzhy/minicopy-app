@@ -1,0 +1,42 @@
+<view>
+    <view>
+        <devicebar></devicebar>
+    </view>
+    <view class="content">
+        <view style="margin-top:132rpx;">
+            <view>
+                <icon class="fail-img"></icon>
+            </view>
+            <view class="main-title">
+                <text>{{title}}</text>
+            </view>
+        </view>
+        <view class="content-err">
+            <view>
+                <view class="fail-title">
+                    <text>错误代码</text>
+                </view>
+                <view class="fail-msg">
+                    <text>{{code}}</text>
+                </view>
+            </view>
+            <view>
+                <view class="fail-title">
+                    <text>失败原因</text>
+                </view>
+                <view class="fail-msg">
+                    <text>{{reason}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="btn">
+            <van-button bindtap="onUserRetryClickCallback" customStyle="width:80%;height: 40px;font-size:30rpx;border-radius:20px 20px 20px 20px;background:#F5A200;border:1px solid #F5A200;color:#fff;font-weight:500;" type="primary">重试</van-button>
+        </view>
+    </view>
+    <view>
+        <view class="question">
+            <text bindtap="gotoUserHelp">遇到问题?</text>
+            <icon class="doubleArrow"></icon>
+        </view>
+    </view>
+</view>

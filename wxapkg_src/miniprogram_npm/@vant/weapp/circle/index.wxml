@@ -1,0 +1,8 @@
+<view class="van-circle">
+    <canvas canvasId="van-circle" class="van-circle__canvas" id="van-circle" style="width: {{utils.addUnit(size)}};height:{{utils.addUnit(size)}}" type="{{type}}"></canvas>
+    <view class="van-circle__text" wx:if="{{!text}}">
+        <slot></slot>
+    </view>
+    <cover-view class="van-circle__text" wx:else>{{text}}</cover-view>
+</view>
+<wxs module="utils" src="../wxs/utils.wxs" />

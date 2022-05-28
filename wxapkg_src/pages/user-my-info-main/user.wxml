@@ -1,0 +1,177 @@
+<view class="head head-height">
+    <view class="custom"></view>
+    <view wx:if="{{phone}}">
+        <view class="userinfo">
+            <view style="position: absolute;">
+                <icon bindtap="getUserInfo" class="userinfo-avatars" wx:if="{{avatarUrl==''}}"></icon>
+                <image class="userinfo-avatar" src="{{avatarUrl}}" wx:if="{{avatarUrl}}"></image>
+            </view>
+            <view>
+                <image bindtap="bindViewTap" class="userinfo-avatar" mode="cover"></image>
+            </view>
+            <view>
+                <text class="phoneNumber">{{phone}}</text>
+                <view class="membershipType" wx:if="{{expirationTime=='会员已过期'}}">
+                    <view>
+                        <image src="../../static/img/ordinaryMember.png" style="width:128rpx;height:40rpx;"></image>
+                    </view>
+                </view>
+                <view class="membershipType" wx:else>
+                    <view>
+                        <image class="doMember" src="../../static/img/distinguishedMember.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="personCenter" class="headArrow">
+                <icon class="headIcon"></icon>
+            </view>
+        </view>
+        <view class="coinsNumber">
+            <view class="coins">
+                <view>
+                    <text class="leftNumber">0</text>
+                </view>
+                <view>
+                    <text class="coinsText">金币</text>
+                </view>
+            </view>
+            <view class="remainingTimes">
+                <view bindtap="purchase" class="purchase">购买</view>
+                <view>
+                    <text bindtap="purchase" class="rightNumber">{{remainingTimes}}</text>
+                </view>
+                <view>
+                    <text class="remainText">次数</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="jumpLogin"></view>
+        <view class="userinfo">
+            <view style="position: absolute;">
+                <icon bindtap="getUserInfo" class="userinfo-avatars" wx:if="{{avatarUrl==''}}"></icon>
+                <image class="userinfo-avatar" src="{{avatarUrl}}" wx:if="{{avatarUrl}}"></image>
+            </view>
+            <view>
+                <image class="userinfo-avatar"></image>
+            </view>
+            <view>
+                <view bindtap="jumpLogin" class="membershipType">
+                    <view class="loginRegister">登录/注册</view>
+                </view>
+            </view>
+        </view>
+        <view class="coinsNumber">
+            <view class="coins">
+                <view>
+                    <text class="leftNumber">-</text>
+                </view>
+                <view>
+                    <text class="coinsText">金币</text>
+                </view>
+            </view>
+            <view class="remainingTimes">
+                <view>
+                    <text class="rightNumber">-</text>
+                </view>
+                <view>
+                    <text class="remainText">次数</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:if="{{phone}}">
+    <view class="blackBlock" wx:if="{{expirationTime=='会员已过期'}}">
+        <view>
+            <image class="vipMember" src="../../static/img/vipMember.png"></image>
+        </view>
+        <view class="date">
+            <text>开通vip享受权益</text>
+        </view>
+        <view bindtap="renewNow1" class="renewNow">
+            <van-button customStyle="width:80px;height:30px;font-size:12px;border-radius:20px 20px 20px 20px;background:#eedbb4;color:#3a3d57;font-weight:500;border:none;" type="default">立即开通</van-button>
+        </view>
+    </view>
+    <view class="blackBlock" wx:else>
+        <view>
+            <image class="vipMember" src="../../static/img/vipMember.png"></image>
+        </view>
+        <view class="date">
+            <text>{{vip_end_date}}到期</text>
+        </view>
+        <view bindtap="renewNow1" class="renewNow">
+            <van-button customStyle="width:80px;height:30px;font-size:12px;border-radius:20px 20px 20px 20px;background:#eedbb4;color:#3a3d57;font-weight:500;border:none;" type="default">立即续费</van-button>
+        </view>
+    </view>
+</view>
+<view wx:else>
+    <view class="blackBlock">
+        <view>
+            <image class="vipMember" src="../../static/img/vipMember.png"></image>
+        </view>
+        <view class="date">
+            <text>开通vip享受权益</text>
+        </view>
+        <view bindtap="renewNow" class="renewNow">
+            <van-button customStyle="width:80px;height:30px;font-size:12px;border-radius:20px 20px 20px 20px;background:#eedbb4;color:#3a3d57;font-weight:500;border:none;" type="default">立即开通</van-button>
+        </view>
+    </view>
+</view>
+<view class="content">
+    <view class="outsideBlock" style="background:#ffffff;">
+        <view class="block" wx:for="{{block1}}" wx:key="index">
+            <view bindtap="{{item.bindTap}}" class="line">
+                <view class="icon">
+                    <icon class="{{item.iconTitle}}"></icon>
+                </view>
+                <view class="right">
+                    <view class="title">
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="rightIcon">
+                        <icon class="iconArrow"></icon>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="none"></view>
+    </view>
+    <view class="outsideBlock1" style="background:#ffffff;">
+        <view class="block" wx:for="{{block2}}" wx:key="index">
+            <view bindtap="{{item.bindTap}}" class="line">
+                <view class="icon">
+                    <icon class="{{item.iconTitle}}"></icon>
+                </view>
+                <view class="right">
+                    <view class="title">
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="rightIcon">
+                        <icon class="iconArrow"></icon>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="none"></view>
+    </view>
+    <view class="outsideBlock2" style="background:#ffffff;">
+        <view class="block" wx:for="{{block3}}" wx:key="index">
+            <view bindtap="{{item.bindTap}}" class="line">
+                <view class="icon">
+                    <icon class="{{item.iconTitle}}"></icon>
+                </view>
+                <view class="right">
+                    <view class="title">
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="rightIcon">
+                        <icon class="iconArrow"></icon>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <tabbar selected="3"></tabbar>
+</view>

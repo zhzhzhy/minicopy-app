@@ -1,0 +1,45 @@
+<view class="container-main">
+    <view class="container-dump-list">
+        <devicebar showcontent="{{true}}" wx:if="{{showView==0}}">
+            <master></master>
+        </devicebar>
+        <view class="container-list-scroll" wx:if="{{show==true}}">
+            <view bindtap="onDumpItemClick" class="contents" data-id="{{index}}" wx:for="{{list}}" wx:key="index">
+                <view class="block">
+                    <view class="{{item.type=='IC卡'?'picView':'picView1'}}">
+                        <text class="type">{{item.type}}</text>
+                    </view>
+                    <view class="name">
+                        <text>{{item.nick}}</text>
+                    </view>
+                    <view class="code">
+                        <text>{{item.type}}</text>
+                    </view>
+                    <view class="rightArrow">
+                        <image class="rightArrowImg" src="../../static/img/rightArrow.png" wx:if="{{showView==0}}"></image>
+                        <radio checked="{{item.checked}}" class="rightArrowImg" wx:if="{{showView==1}}"></radio>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{show==false}}">
+            <view class="noneCard">
+                <image class="noneCardImg" src="../../static/img/noneCard.png"></image>
+                <view class="noneCardText">
+                    <text>{{cardType==''?'暂无卡片':cardType=='IC'?'暂无IC卡':'暂无ID卡'}}</text>
+                </view>
+            </view>
+            <view class="addCard" wx:if="{{show==false&&cardType==''}}">
+                <van-button bindtap="addCard" customStyle="width:40%;height: 40px;font-size:30rpx;border-radius:20px 20px 20px 20px;background:#F5A200;border:1px solid #F5A200;color:#fff;font-weight:500;" type="primary">
+                    <icon class="addBtn"></icon> 添加卡片 </van-button>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{show==true||cardType=='IC'||cardType=='ID'}}">
+        <view class="bottomBtn" wx:if="{{showView==1}}">
+            <button bindtap="openData" class="{{list.length<=0?'prohibit':'noProhibit'}}">打开数据</button>
+        </view>
+    </view>
+    <view class="default-tab-bar-height" wx:if="{{showView==0}}"></view>
+    <add-card bind:cancel="bottomBtnCancel" bind:confirm="bottomBtnConfirm" showDailog="{{showModal}}"></add-card>
+</view>

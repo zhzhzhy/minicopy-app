@@ -1,0 +1,6 @@
+<van-transition bind:tap="onClick" catch:touchmove="noop" customClass="van-overlay" customStyle="z-index: {{zIndex}}; {{customStyle}}" duration="{{duration}}" show="{{show}}" wx:if="{{lockScroll}}">
+    <slot></slot>
+</van-transition>
+<van-transition bind:tap="onClick" customClass="van-overlay" customStyle="z-index: {{zIndex}}; {{customStyle}}" duration="{{duration}}" show="{{show}}" wx:else>
+    <slot></slot>
+</van-transition>

@@ -1,0 +1,103 @@
+.frame {
+    background: rgba(0,0,0,.4);
+}
+
+.frame,.masterFrame {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.masterFrame {
+    background: #131418;
+    color: #fff;
+}
+
+.whiteBlock {
+    background: #fff;
+}
+
+.whiteBlock,.whiteBlockMaster {
+    border-radius: 8px 8px 8px 8px;
+    height: 592rpx;
+    left: 6.6%;
+    margin-top: 376rpx;
+    position: absolute;
+    right: 5%;
+    width: 640rpx;
+}
+
+.whiteBlockMaster {
+    background: #1a1d26;
+}
+
+.number0 {
+    color: #000;
+}
+
+.number0,.number0Master {
+    font-size: 34rpx;
+    font-weight: 500;
+    height: 48rpx;
+    margin-top: 64rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.number0Master {
+    color: #fff;
+}
+
+.openVip {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    color: #f5a200;
+}
+
+.openVip,.openVipMaster {
+    height: 90rpx;
+    line-height: 64rpx;
+    margin-top: 120rpx;
+    padding-top: 30rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.openVipMaster {
+    border-bottom: 1px solid #262931;
+    border-top: 1px solid #262931;
+    color: #7d90a9;
+}
+
+.purchaseCard {
+    border-bottom: 1px solid #ccc;
+}
+
+.purchaseCard,.purchaseCardMaster {
+    color: #576b95;
+    height: 90rpx;
+    line-height: 64rpx;
+    padding-top: 30rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.purchaseCardMaster {
+    border-bottom: 1px solid #262931;
+}
+
+.cancel1 {
+    color: #000;
+}
+
+.cancel1,.cancel1Master {
+    font-weight: 500;
+    margin-top: 6%;
+    text-align: center;
+    width: 100%;
+}
+
+.cancel1Master {
+    color: hsla(0,0%,100%,.9);
+}

@@ -1,0 +1,19 @@
+<view class="{{contentColor=='1'?'frame':'masterFrame'}}" wx:if="{{showView==true}}">
+    <view class="{{contentColor=='1'?'whiteBlock':'whiteBlockMaster'}}">
+        <view class="{{contentColor=='1'?'number0':'number0Master'}}">
+            <text>写卡次数用完啦</text>
+        </view>
+        <view style="width:640rpx;text-align:center;position:absolute;margin-top:32rpx;color:#848484;font-size:34rpx;font-weight:500;">
+            <text>继续写卡请开通vip或购买次数</text>
+        </view>
+        <view bindtap="onUserBuyVipCall" class="{{contentColor=='1'?'openVip':'openVipMaster'}}">
+            <text>开通VIP</text>
+        </view>
+        <view bindtap="onUserBuyChanceCall" class="{{contentColor=='1'?'purchaseCard':'purchaseCardMaster'}}">
+            <text>单次购买</text>
+        </view>
+        <view bindtap="onBuyVipCancelCall" class="{{contentColor=='1'?'cancel1':'cancel1Master'}}">
+            <text>取消</text>
+        </view>
+    </view>
+</view>

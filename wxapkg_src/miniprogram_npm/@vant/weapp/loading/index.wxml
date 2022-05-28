@@ -1,0 +1,10 @@
+<view class="custom-class {{utils.bem( 'loading',{vertical:vertical} )}}">
+    <view class="van-loading__spinner van-loading__spinner--{{type}}" style="{{computed.spinnerStyle( {color:color,size:size} )}}">
+        <view class="van-loading__dot" wx:if="{{type==='spinner'}}" wx:for="{{array12}}" wx:key="index"></view>
+    </view>
+    <view class="van-loading__text" style="{{computed.textStyle( {textSize:textSize} )}}">
+        <slot></slot>
+    </view>
+</view>
+<wxs module="utils" src="../wxs/utils.wxs" />
+<wxs module="computed" src="index.wxs" />

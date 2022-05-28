@@ -1,0 +1,13 @@
+<view wx:if="{{show}}">
+    <view catchtouchmove="preventTouchMove" class="container-dialog-mask"></view>
+    <view class="container-dialog-content" style="{{themeMap.base}}">
+        <view class="txt-title" style="{{themeMap.title}}">{{title}}</view>
+        <view class="container-center-input">
+            <input bindinput="onCardNameInput" class="input-dump-name" cursorSpacing="140" placeholder="{{placeholder}}" placeholderClass="phClass" placeholderStyle="{{themeMap.placeholder}}" style="{{themeMap.input}}" value="{{value}}"></input>
+        </view>
+        <view class="container-bottom-btns" style="{{themeMap.btnbase}}">
+            <view bindtap="onSaveCancel" class="btn-cancel" style="{{themeMap.btncancel}}">取消</view>
+            <view bindtap="onSaveDumpClick" class="btn-confirm" style="{{themeMap.btnconfirm}}">确定</view>
+        </view>
+    </view>
+</view>

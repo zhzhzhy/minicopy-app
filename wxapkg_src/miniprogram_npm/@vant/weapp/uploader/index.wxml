@@ -1,0 +1,31 @@
+<view class="van-uploader">
+    <view class="van-uploader__wrapper">
+        <view bindtap="onClickPreview" class="van-uploader__preview" data-index="{{index}}" wx:if="{{previewImage}}" wx:for="{{lists}}" wx:key="index">
+            <image alt="{{item.name||'图片'+index}}" bindtap="onPreviewImage" class="van-uploader__preview-image" data-index="{{index}}" mode="{{imageFit}}" src="{{item.thumb||item.url}}" style="{{computed.sizeStyle( {previewSize:previewSize} )}}" wx:if="{{item.isImage}}"></image>
+            <video autoplay="{{item.autoplay}}" bindtap="onPreviewVideo" class="van-uploader__preview-image" data-index="{{index}}" poster="{{item.thumb}}" src="{{item.url}}" style="{{computed.sizeStyle( {previewSize:previewSize} )}}" title="{{item.name||'视频'+index}}" wx:elif="{{item.isVideo}}"></video>
+            <view bindtap="onPreviewFile" class="van-uploader__file" data-index="{{index}}" style="{{computed.sizeStyle( {previewSize:previewSize} )}}" wx:else>
+                <van-icon class="van-uploader__file-icon" name="description"></van-icon>
+                <view class="van-uploader__file-name van-ellipsis">{{item.name||item.url}}</view>
+            </view>
+            <view class="van-uploader__mask" wx:if="{{item.status==='uploading'||item.status==='failed'}}">
+                <van-icon class="van-uploader__mask-icon" name="close" wx:if="{{item.status==='failed'}}"></van-icon>
+                <van-loading customClass="van-uploader__loading" wx:else></van-loading>
+                <text class="van-uploader__mask-message" wx:if="{{item.message}}">{{item.message}}</text>
+            </view>
+            <view catch:tap="deleteItem" class="van-uploader__preview-delete" data-index="{{index}}" wx:if="{{deletable&&item.deletable}}">
+                <van-icon class="van-uploader__preview-delete-icon" name="cross"></van-icon>
+            </view>
+        </view>
+        <block wx:if="{{isInCount}}">
+            <view bindtap="startUpload" class="van-uploader__slot">
+                <slot></slot>
+            </view>
+            <view bindtap="startUpload" class="van-uploader__upload {{disabled?'van-uploader__upload--disabled':''}}" style="{{computed.sizeStyle( {previewSize:previewSize} )}}" wx:if="{{showUpload}}">
+                <van-icon class="van-uploader__upload-icon" name="{{uploadIcon}}"></van-icon>
+                <text class="van-uploader__upload-text" wx:if="{{uploadText}}">{{uploadText}}</text>
+            </view>
+        </block>
+    </view>
+</view>
+<wxs module="utils" src="../wxs/utils.wxs" />
+<wxs module="computed" src="index.wxs" />

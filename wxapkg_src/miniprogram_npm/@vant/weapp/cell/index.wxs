@@ -1,0 +1,12 @@
+var style = require('p_./miniprogram_npm/@vant/weapp/wxs/style.wxs');
+var addUnit = require('p_./miniprogram_npm/@vant/weapp/wxs/add-unit.wxs');
+
+function titleStyle(data) {
+    return (style([({
+        'max-width': addUnit(data.titleWidth),
+        'min-width': addUnit(data.titleWidth),
+    }), data.titleStyle]))
+};
+module.exports = ({
+    titleStyle: titleStyle,
+});

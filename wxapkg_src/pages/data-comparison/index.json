@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "van-switch": "../../miniprogram_npm/@vant/weapp/switch/index"
+    },
+    "navigationBarTitleText": "数据对比",
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#1A1D22"
+}

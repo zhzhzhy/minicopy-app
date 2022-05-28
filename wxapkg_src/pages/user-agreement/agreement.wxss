@@ -1,0 +1,33 @@
+.wrap {
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    border-bottom: .5px solid #ccc;
+    font-weight: bolder;
+    height: 60rpx;
+    margin-bottom: 2%;
+    text-align: center;
+    width: 100%;
+}
+
+.content {
+    font-size: 28rpx;
+    height: 100%;
+    margin: 0 auto 15%;
+    width: 96%;
+}
+
+.content text {
+    margin-top: -5rpx;
+}
+
+.bolder {
+    font-weight: bolder;
+    margin: 2% 0;
+}
+
+.text {
+    margin-bottom: 1%;
+}

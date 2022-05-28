@@ -1,0 +1,1 @@
+<card-wallet-list bind:selected="onDumpSelected" cardType="{{type}}" showView="{{1}}" style="height: 100%;"></card-wallet-list>

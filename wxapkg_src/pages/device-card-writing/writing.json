@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "van-circle": "../../miniprogram_npm/@vant/weapp/circle/index",
+        "devicebar": "/components/device-tab-bar/device",
+        "backitp": "/components/back-intercept/back"
+    },
+    "navigationBarTitleText": "写卡"
+}

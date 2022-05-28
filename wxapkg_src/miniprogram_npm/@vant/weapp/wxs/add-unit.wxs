@@ -1,0 +1,9 @@
+var REGEXP = getRegExp('^-?\x5cd+(\x5c.\x5cd+)?$');
+
+function addUnit(value) {
+    if (value == null) {
+        return (undefined)
+    };
+    return (REGEXP.test('' + value) ? value + 'px' : value)
+};
+module.exports = addUnit;

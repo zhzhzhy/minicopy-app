@@ -1,0 +1,265 @@
+.container-dialog-main {
+    background: #1a1d26;
+    overflow-x: hidden;
+    padding-top: 20rpx;
+    width: 100%;
+}
+
+.container-dialog-title {
+    margin-top: 20rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.txt-title {
+    color: #fff;
+    font-size: 30rpx;
+    font-weight: 700;
+    letter-spacing: 2rpx;
+}
+
+.container-opera-main {
+    box-sizing: border-box;
+    margin-top: 20rpx;
+    padding: 48rpx 48rpx 48rpx 12rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.container-opera-item {
+    height: 64rpx;
+    margin-top: 20rpx;
+}
+
+.container-opera-item,.container-opera-title {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.container-opera-title {
+    color: #838b99;
+    flex: 1.8;
+    font-size: 28rpx;
+    font-weight: 500;
+}
+
+.container-opera-detail {
+    flex: 8.2;
+    flex-direction: row;
+    margin-left: 10rpx;
+    width: 100%;
+}
+
+.btn-tab-switch-base,.container-opera-detail {
+    box-sizing: border-box;
+    display: flex;
+}
+
+.btn-tab-switch-base {
+    align-items: center;
+    background: #0f1012;
+    border-radius: 4rpx 4rpx 4rpx 4rpx;
+    flex: 1;
+    font-size: 28rpx;
+    font-weight: 400;
+    height: 64rpx;
+    justify-content: center;
+    margin-right: 12rpx;
+    min-width: fit-content;
+    padding-left: 16rpx;
+    padding-right: 16rpx;
+    text-align: center;
+}
+
+.btn-tab-switch-base:nth-last-child(1) {
+    margin-right: 0rpx;
+}
+
+.btn-tab-switch-is-selected {
+    border: 2rpx solid #f5a200;
+    color: #f5a200;
+    opacity: 1;
+}
+
+.btn-tab-switch-no-selected {
+    color: #f5f5f5;
+}
+
+.container-input-item {
+    align-items: center;
+    background: #0f1012;
+    box-sizing: border-box;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    height: 64rpx;
+    justify-content: center;
+    width: 100%;
+}
+
+.input-item-style {
+    flex: 1;
+    font-family: siyuan,monospace;
+    padding-right: 18rpx;
+    text-align: right;
+    width: 100%;
+}
+
+.container-tag-uid-size,.input-item-style {
+    color: #f5f5f5;
+    font-size: 28rpx;
+    font-weight: 400;
+}
+
+.container-tag-uid-size {
+    align-items: center;
+    background: #6e7480;
+    display: flex;
+    font-weight: 700;
+    justify-content: center;
+    margin-right: 12rpx;
+    padding-left: 12rpx;
+    padding-right: 12rpx;
+}
+
+.van_action_close {
+    float: right;
+    height: 40rpx;
+    margin-right: 32rpx;
+    margin-top: -35rpx;
+    width: 40rpx;
+}
+
+.van_action_left_block {
+    height: auto;
+    text-align: center;
+    width: 150rpx;
+}
+
+.van_action_left_text {
+    color: #838b99;
+    font-size: 28rpx;
+    font-weight: 500;
+    margin-top: 50rpx;
+}
+
+.btnTabBlock {
+    height: 80rpx;
+    left: 133rpx;
+    position: absolute;
+    top: 110rpx;
+    width: 590rpx;
+}
+
+.btnTab {
+    border: 2rpx solid #f5a200;
+    color: #f5a200;
+    font-size: 28rpx;
+    font-weight: 400;
+    height: 100%;
+    line-height: 80rpx;
+    margin-left: 2%;
+    text-align: center;
+    width: 152rpx;
+}
+
+.NoJCOPBlock {
+    color: #f5f5f5;
+}
+
+.JCOPBlock,.NoJCOPBlock {
+    background: #0f1012;
+    float: left;
+    font-size: 28rpx;
+    font-weight: 400;
+    height: 100%;
+    line-height: 80rpx;
+    margin-left: 2%;
+    text-align: center;
+    width: 232rpx;
+}
+
+.JCOPBlock {
+    border: 2rpx solid #f5a200;
+    color: #f5a200;
+}
+
+.inputBlock {
+    height: 45%;
+    position: absolute;
+    right: 52rpx;
+    top: 202rpx;
+    width: 557rpx;
+}
+
+.explainBlock {
+    height: auto;
+    margin-top: 50rpx;
+    width: 100%;
+}
+
+.explain {
+    font-weight: 700;
+}
+
+.bottomExplainText,.explain {
+    color: #838b99;
+    font-size: 24rpx;
+    padding-left: 30rpx;
+    width: 100%;
+}
+
+.bottomExplainText {
+    font-weight: 400;
+    margin-top: 24rpx;
+}
+
+.doubleBtn {
+    height: 100rpx;
+    margin-bottom: 30rpx;
+    margin-top: 44rpx;
+    width: 100%;
+}
+
+.leftBtn {
+    float: left;
+    margin-left: 40rpx;
+}
+
+.leftBtn,.rightBtn {
+    height: 40%;
+    width: 40%;
+}
+
+.rightBtn {
+    float: right;
+    margin-right: 40rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.bottomBtnCancel {
+    background: #6e7480;
+    border: 2rpx solid #6e7480;
+    border-radius: 40rpx 40rpx 40rpx 40rpx;
+    color: hsla(0,0%,100%,.6);
+}
+
+.bottomBtnCancel,.bottomBtnConfirm {
+    font-size: 30rpx;
+    font-weight: 500;
+    width: 100%;
+}
+
+.bottomBtnConfirm {
+    background: #f5a200;
+    border: #f5a200;
+    border-radius: 40rpx 40rpx 40rpx 40rpx;
+    color: #fff;
+    padding: 3rpx 0rpx;
+}

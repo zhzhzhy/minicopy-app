@@ -1,0 +1,88 @@
+<view style="background: white; height: 100%;">
+    <view>
+        <devicebar></devicebar>
+    </view>
+    <block wx:if="{{pageStatus==0}}">
+        <view class="content">
+            <view class="{{vipNum?'header_view_hide':'header_view_show'}}">
+                <view style="width:323.5714rpx;height:496rpx;margin:0 auto;">
+                    <view style="width:323.5714rpx;height: 450rpx;text-align:center;float:left;position: absolute;">
+                        <image src=" ../../static/img/cardReader.png" style="width:323.5714rpx;height: 450rpx;"></image>
+                    </view>
+                    <view class="animation">
+                        <view class="box2"></view>
+                        <view class="box3"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="search">准备读卡</view>
+            <view class="tipsText">
+                <text>请确保卡片或钥匙扣稳定贴于读卡器</text>
+            </view>
+        </view>
+        <view>
+            <problem-help></problem-help>
+        </view>
+    </block>
+    <block wx:if="{{pageStatus==1}}">
+        <view class="progress">
+            <view class="progress-bar-box">
+                <view class="progress-bar-in" style="width:{{progress+'%'}};">
+                    <image src="/static/img/writeCardLogo.svg" style="width: 22%; height: 22%; padding: 20rpx;"></image>
+                </view>
+            </view>
+        </view>
+        <view class="cardReadText">
+            <view class="readCardTime" wx:if="{{decryptShow==false}}">
+                <view style="width:520rpx;margin:0 auto;height:50rpx;">
+                    <view style="float:left;">正在读卡</view>
+                    <view style="float:left;width:100rpx;text-align:left;">{{progress}}%</view>
+                    <view style="float:left;">
+                        <text wx:if="{{decryptShow==false}}">...大约需要3秒</text>
+                    </view>
+                </view>
+            </view>
+            <view class="readCardTime" wx:if="{{decryptShow==true}}">
+                <view style="width:250rpx;height:50rpx;margin:0 auto;">
+                    <view style="float:left;">正在读卡</view>
+                    <view style="float:left;">{{progress}}%</view>
+                </view>
+            </view>
+            <view class="remain" wx:if="{{decryptShow==true}}">
+                <view class="remainBlock">
+                    <text>读卡期间请勿移动卡片</text>
+                </view>
+                <view style="width:100%;height:50rpx;">
+                    <view style="margin:0 auto;width:64%;height:50rpx;">
+                        <view style="float:left;line-height:50rpx;width:55rpx;margin-left:4.5%;">正在</view>
+                        <view style="float:left;line-height:50rpx;width:130rpx;margin-left:0rpx;height:50rpx;text-align:left;">{{decrypt}}</view>
+                        <view style="float:left;line-height:50rpx;width:70rpx;height:50rpx;">{{step}}/{{max}}</view>
+                        <view style="float:left;line-height:50rpx;text-align:left;">大约需要</view>
+                        <view style="float:left;line-height:50rpx;width:100rpx;margin-left:0rpx;text-align:left;">{{time_msg}}秒</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{pageStatus==2}}">
+        <view class="content">
+            <view style="margin-top:132rpx;">
+                <view>
+                    <icon class="fail"></icon>
+                </view>
+                <view class="success">读卡成功</view>
+                <view class="successCardNumber">卡号：{{uid_hex}}</view>
+            </view>
+        </view>
+        <view class="doubleBtn">
+            <view class="leftBtn">
+                <button bindtap="onSaveDumpToCardWallet" class="{{dumpSaved?'prohibit':'noProhibit'}}">保存到卡包</button>
+            </view>
+            <view class="rightBtn">
+                <button bindtap="gotoWriteCard" style="width:100%;font-size:30rpx;border-radius:20px 20px 20px 20px;padding:3rpx 0rpx 3rpx 0rpx;background:#F5A200;color:#fff;font-weight:500;">前往写卡</button>
+            </view>
+        </view>
+    </block>
+    <backitp bindback="onUserBack" canback="{{canExit}}"></backitp>
+    <save-data bind:cancel="onUserCancelDumpSave" bind:confirm="onUserConfirmDumpSave" show="{{showDumpSaveDialog}}" theme="light" title="保存数据"></save-data>
+</view>

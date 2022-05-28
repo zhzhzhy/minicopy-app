@@ -1,0 +1,5 @@
+<view bindtap="onClick" class="{{computed.rootClass( {classPrefix:classPrefix,name:name} )}}" style="{{computed.rootStyle( {customStyle:customStyle,color:color,size:size} )}}">
+    <van-info customClass="van-icon__info" dot="{{dot}}" info="{{info}}" wx:if="{{info!==null||dot}}"></van-info>
+    <image class="van-icon__image" mode="aspectFit" src="{{name}}" wx:if="{{computed.isImage(name)}}"></image>
+</view>
+<wxs module="computed" src="index.wxs" />

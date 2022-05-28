@@ -1,0 +1,14 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-button": "../../miniprogram_npm/@vant/weapp/button/index",
+        "van-popup": "../../miniprogram_npm/@vant/weapp/popup/index",
+        "van-cell": "../../miniprogram_npm/@vant/weapp/cell/index",
+        "van-image": "../../miniprogram_npm/@vant/weapp/image/index",
+        "problem-help": "../../components/problem-help/problem-help",
+        "backitp": "/components/back-intercept/back",
+        "devicebar": "/components/device-tab-bar/device",
+        "save-data": "../../components/dialog-tag-nick-editor/editor"
+    },
+    "navigationBarTitleText": "读卡"
+}

@@ -1,0 +1,36 @@
+<view>
+    <view class="topText">
+        <view class="topTexts">
+            <text>附近的设备<text class="eqText"> {{deviceList.length}} </text>台</text>
+        </view>
+    </view>
+    <view class="content">
+        <view class="search0" wx:if="{{deviceList.length==0}}">
+            <view class="eqContentImg">
+                <icon class="eqSearch"></icon>
+            </view>
+            <view class="eqContentText">
+                <text>附近没有可连接的设备</text>
+            </view>
+        </view>
+        <view bindtap="onUserConnectDeviceForItem" data-id="{{index}}" wx:for="{{deviceList}}" wx:key="index">
+            <view class="block" hoverClass="view-connect-device-item-hover" hoverStartTime="10" hoverStayTime="100">
+                <view class="picView">
+                    <icon class="type"></icon>
+                </view>
+                <view class="name">
+                    <text>{{item.name}}</text>
+                </view>
+                <view class="{{item.connected==true?'rightBtn1':'rightBtn'}}">
+                    <view class="{{item.connected==true?'connImg1':'connImg'}}">
+                        <icon class="{{item.connected==true?'connect1':'connect'}}"></icon>
+                    </view>
+                    <view class="{{item.connected==true?'conn1':'conn'}}">
+                        <text>{{item.connected==true?' 断开':'连接'}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="line"></view>
+        </view>
+    </view>
+</view>

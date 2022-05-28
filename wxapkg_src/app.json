@@ -1,0 +1,74 @@
+{
+    "pages": [
+        "pages/device-connect-main/index",
+        "pages/device-master-mode/index",
+        "pages/password-management/password-management",
+        "pages/data-comparison/index",
+        "pages/user-buy-vip/buy",
+        "pages/user-buy-writetag-chance/chance",
+        "pages/reward-task-tiktok/tiktok",
+        "pages/card-dump-select/list",
+        "pages/card-wallet-info/info",
+        "pages/card-wallet-list/list",
+        "pages/user-login-onekey/login",
+        "pages/user-my-info-main/user",
+        "pages/shop-application-main/shop",
+        "pages/device-api-test/index",
+        "pages/device-connect-list/discovery",
+        "pages/device-card-reading/reading",
+        "pages/device-card-read-fail/fail",
+        "pages/device-card-write-ready/write",
+        "pages/device-card-writing/writing",
+        "pages/device-card-write-success/success",
+        "pages/device-card-write-fail/fail",
+        "pages/device-firmware-update/index",
+        "pages/settings-program-main/settings",
+        "pages/settings-device-unbind/unbind",
+        "pages/user-go-taobao/go",
+        "pages/user-agreement/agreement",
+        "pages/user-feedback-commit/feedback",
+        "pages/user-feedback-history/history",
+        "pages/user-exchange-code/exchange",
+        "pages/user-info-details/info",
+        "pages/user-device-help/help",
+        "pages/reward-task-list/list",
+        "pages/reward-task-history/history",
+        "pages/reward-task-ranking/ranking",
+        "pages/about-nikolalab/about-us"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#ffffff"
+    },
+    "tabBar": {
+        "selectedColor": "#f5a200",
+        "list": [
+            {
+                "pagePath": "pages/device-connect-main/index",
+                "text": "首页",
+                "iconPath": "static/img/home.png",
+                "selectedIconPath": "static/img/home1.png"
+            },
+            {
+                "pagePath": "pages/shop-application-main/shop",
+                "text": "商城",
+                "iconPath": "static/img/mall.png",
+                "selectedIconPath": "static/img/mall1.png"
+            },
+            {
+                "pagePath": "pages/card-wallet-list/list",
+                "text": "卡包",
+                "iconPath": "static/img/card.png",
+                "selectedIconPath": "static/img/card1.png"
+            },
+            {
+                "pagePath": "pages/user-my-info-main/user",
+                "text": "我的",
+                "iconPath": "static/img/person.png",
+                "selectedIconPath": "static/img/person1.png"
+            }
+        ]
+    }
+}

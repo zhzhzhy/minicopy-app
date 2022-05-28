@@ -1,0 +1,1 @@
+<card-reader-fail bindretry="retry" helpCode="2" status="{{status}}" title="写卡失败"></card-reader-fail>

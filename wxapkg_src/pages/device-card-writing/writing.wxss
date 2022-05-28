@@ -1,0 +1,143 @@
+.header_view_hide {
+    display: none;
+}
+
+.header_view_show {
+    display: block;
+}
+
+.connect {
+    background: #fff;
+    height: 40rpx;
+    margin-left: 30rpx;
+    margin-right: 24rpx;
+    margin-top: 50rpx;
+}
+
+.iconText {
+    height: 40rpx;
+    line-height: 40rpx;
+    width: 100%;
+}
+
+.point {
+    background: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTY0LjM4MyA1MTJhNDM4IDQzOCAwIDEgMCA4OTUuMjM0IDAgNDM4IDQzOCAwIDEgMC04OTUuMjM0IDBaIiBmaWxsPSIjMWFmYTI5Ii8+PC9zdmc+");
+    background-size: 30rpx 30rpx;
+    float: left;
+    height: 30rpx;
+    margin-left: 0rpx;
+    margin-top: 6rpx;
+    width: 30rpx;
+}
+
+.readCard {
+    color: gray;
+    float: left;
+    font-size: 33rpx;
+    height: 35rpx;
+    margin-left: 20rpx;
+    width: 300rpx;
+}
+
+.progress {
+    margin-left: 44rpx;
+    margin-right: 44rpx;
+    margin-top: 72rpx;
+}
+
+.cardReadText {
+    margin-top: 60rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.readCardTime {
+    color: #333;
+    font-size: 34rpx;
+    font-weight: 600;
+    letter-spacing: 2rpx;
+}
+
+.remain {
+    color: #757875;
+    font-size: 26rpx;
+    font-weight: 400;
+    margin-top: 24rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.card {
+    background: #f5a200;
+    border-radius: 12rpx 12rpx 12rpx 12rpx;
+    height: 380rpx;
+    margin-left: 44rpx;
+    margin-right: 44rpx;
+    margin-top: 88rpx;
+    padding-top: 24rpx;
+    width: 662rpx;
+}
+
+.logo {
+    margin-left: 24rpx;
+}
+
+.logo,.logoImg {
+    height: 64rpx;
+    width: 124rpx;
+}
+
+.progressC {
+    height: 200rpx;
+    margin-top: 30rpx;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width:375px) {
+    .circle {
+        float: left;
+        height: auto;
+        margin-left: 1.2%;
+        margin-top: 1.9%;
+        width: 100%;
+        z-index: auto;
+    }
+
+    .download {
+        background: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTY1Mi41NTcgMTI3Ljg5MmExMjcuODkyIDEyNy44OTIgMCAxIDAtMjU1Ljc4NCAwVjU1OS44NkwyNDQuNzkgNDA3Ljg3NUExMjcuODkyIDEyNy44OTIgMCAxIDAgNjMuODY1IDU4OC42OTJMNDM0LjIzIDk1OS4wNTdsMi45NjQgMi44NTZhMTI3LjQ2MSAxMjcuNDYxIDAgMCAwIDk0LjM3IDM0LjQzOSAxMjcuOTQ2IDEyNy45NDYgMCAwIDAgODMuNTM3LTM3LjI5NWwzNzAuMzY0LTM3MC4zNjVhMTI3Ljg5MiAxMjcuODkyIDAgMSAwLTE4MC44Ny0xODAuODdMNjUyLjYxIDU1OS44MDRWMTI3Ljk0NnoiIGZpbGw9IiNGRkYiIG9wYWNpdHk9Ii45Ii8+PC9zdmc+");
+        background-size: 18.49px 18.49px;
+        height: 18.49px;
+        width: 18.49px;
+    }
+}
+
+@media screen and (min-width:375px) {
+    .circle {
+        border-radius: 50%;
+        float: left;
+        height: 128rpx;
+        margin-left: 40%;
+        margin-top: 1.6%;
+        width: 128rpx;
+        z-index: auto;
+    }
+
+    .download {
+        background: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTY1Mi41NTcgMTI3Ljg5MmExMjcuODkyIDEyNy44OTIgMCAxIDAtMjU1Ljc4NCAwVjU1OS44NkwyNDQuNzkgNDA3Ljg3NUExMjcuODkyIDEyNy44OTIgMCAxIDAgNjMuODY1IDU4OC42OTJMNDM0LjIzIDk1OS4wNTdsMi45NjQgMi44NTZhMTI3LjQ2MSAxMjcuNDYxIDAgMCAwIDk0LjM3IDM0LjQzOSAxMjcuOTQ2IDEyNy45NDYgMCAwIDAgODMuNTM3LTM3LjI5NWwzNzAuMzY0LTM3MC4zNjVhMTI3Ljg5MiAxMjcuODkyIDAgMSAwLTE4MC44Ny0xODAuODdMNjUyLjYxIDU1OS44MDRWMTI3Ljk0NnoiIGZpbGw9IiNGRkYiIG9wYWNpdHk9Ii45Ii8+PC9zdmc+");
+        background-size: 18.49px 18.49px;
+        height: 18.49px;
+        width: 18.49px;
+    }
+}
+
+.carNumberBlock {
+    width: 100%;
+}
+
+.cardNumber {
+    color: #fff;
+    font-size: 24rpx;
+    margin-left: 24rpx;
+    margin-top: 30rpx;
+}

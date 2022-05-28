@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "card-wallet-list": "/components/card-wallet-list/card-wallet-list"
+    },
+    "navigationBarTitleText": "卡包"
+}

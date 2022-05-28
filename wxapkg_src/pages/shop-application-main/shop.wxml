@@ -1,0 +1,14 @@
+<view>
+    <view>
+        <devicebar></devicebar>
+    </view>
+    <view class="contentBlock">
+        <view>
+            <icon class="computer"></icon>
+        </view>
+        <view class="development">
+            <text>正在开发中...</text>
+        </view>
+    </view>
+    <tabbar selected="1"></tabbar>
+</view>

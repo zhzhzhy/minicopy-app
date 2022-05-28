@@ -1,0 +1,114 @@
+<view style="width: 100%; height: 100%; display: flex; flex-direction: column;">
+    <view class="top-tab-container">
+        <view bindtap="onTabClick" class="top-tab-item" data-id="{{item.index}}" wx:for="{{pageMaps}}" wx:key="index">
+            <text class="top-tab-title" style="{{item.show?'color: #FFFFFF':''}}">{{item.title}}</text>
+            <view class="top-tab-badge" style="background: {{item.show?'#F5A200':'none'}};"></view>
+        </view>
+    </view>
+    <view class="container-main-view">
+        <view class="container-main-top">
+            <view class="container-left-content">
+                <view class="container-left-title-main">
+                    <block wx:if="{{leftTaskStatus.status==0}}"></block>
+                    <block wx:if="{{leftTaskStatus.status==1}}">
+                        <icon class="left-title-fail-icon"></icon>
+                        <text class="left-title-main-base left-title-main-fail">{{leftTaskStatus.message}}</text>
+                    </block>
+                    <block wx:if="{{leftTaskStatus.status==2}}">
+                        <icon class="left-title-succ-icon"></icon>
+                        <text class="left-title-main-base left-title-main-succ">{{leftTaskStatus.message}}</text>
+                    </block>
+                    <block wx:if="{{leftTaskStatus.status==3}}">
+                        <van-loading size="15px" type="spinner"></van-loading>
+                        <text class="left-title-main-base left-title-main-run">{{leftTaskStatus.message}}</text>
+                    </block>
+                    <view class="left-title-main-base left-title-main-nick" wx:if="{{leftTaskStatus.status==4}}">{{leftTaskStatus.message}}</view>
+                </view>
+                <view class="container-left-tag-info">
+                    <view class="container-left-info-main" style="display: {{pageMaps.page14443A.show?'flex':'none'}};">
+                        <view class="container-left-tag-detail" style="visibility: {{taginfo?'visiable':'hidden'}};">
+                            <view bindtap="onCopyUIDBtnClickCall" class="left-tag-detail-uid">{{taginfo.uid?'卡号：':''}}{{taginfo.uid}}</view>
+                            <view class="container-left-tag-detail-type">
+                                <text class="left-tag-detail-type-item" wx:for="{{taginfo.types}}" wx:for-item="type" wx:key="index">{{type}}</text>
+                            </view>
+                        </view>
+                        <view bindtap="onShowAllKeysGroupClick" class="container-left-tag-detail" wx:if="{{keyGroup}}">
+                            <view style="width: 100%; margin-top: 20rpx;" wx:for="{{keyGroup}}" wx:for-index="indexList" wx:for-item="keyList" wx:key="index">
+                                <view style="display: {{keyGroup.length==1||keyGroup.length>1&&(indexList==0||showAllKeysGroup)?'flex':'none'}}; flex-direction: row;">
+                                    <view style="height: 96rpx; display: flex; flex-direction: column;">
+                                        <text class="key-get-status-top-index"></text>
+                                        <text class="key-get-status-left-type">KEYA</text>
+                                        <text class="key-get-status-left-type">KEYB</text>
+                                    </view>
+                                    <view style="height: 96rpx; display: flex; flex-direction: row; margin-left: 10rpx;">
+                                        <view class="container-left-tag-keys-item" wx:for="{{keyList}}" wx:for-index="indexItem" wx:for-item="keyItem" wx:key="index">
+                                            <text class="key-get-status-top-index">{{keyItem.sector}}</text>
+                                            <view class="{{keyItem.keya!=null?'keys-get-status-ok-icon':'key-get-status-checkbox'}}"></view>
+                                            <view class="{{keyItem.keyb!=null?'keys-get-status-ok-icon':'key-get-status-checkbox'}}"></view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="{{showAllKeysGroup?'keys-list-close-icon':'keys-list-open-icon'}}" style="margin-left: auto; margin-right: auto; margin-top: 20rpx;" wx:if="{{keyGroup.length>1}}"></view>
+                        </view>
+                        <view class="container-left-tag-data">
+                            <view class="container-mifare-data-base container-mifare-data-title">
+                                <text class="container-mifare-data-sector">扇区</text>
+                                <text class="container-mifare-data-block">块</text>
+                                <text class="container-mifare-data-hex">数据</text>
+                            </view>
+                            <view class="container-mifare-data-base container-mifare-data-datas">
+                                <view bindtap="onUserClickEditData" class="container-mifare-data-item" data-id="{{key}}" hoverClass="right-button-item-hover" hoverStartTime="10" hoverStayTime="100" wx:for="{{dataList}}" wx:for-index="key" wx:key="index">
+                                    <view class="container-mifare-data-sector">
+                                        <text class="mifare-data-block-font mifare-data-index-number">{{item.sector}}</text>
+                                    </view>
+                                    <view class="container-mifare-data-block">
+                                        <text class="mifare-data-block-font mifare-data-index-number">{{item.block}}</text>
+                                    </view>
+                                    <view class="container-mifare-data-hex">
+                                        <text class="mifare-data-block-font mifare-data-block-manufacturer" wx:if="{{item.type==0}}">{{item.data}}</text>
+                                        <text class="mifare-data-block-font mifare-data-block-userdata" wx:if="{{item.type==1}}">{{item.data}}</text>
+                                        <block wx:if="{{item.type==2}}">
+                                            <text class="mifare-data-block-font mifare-data-block-trail-keya">{{item.data.keya}}</text>
+                                            <text class="mifare-data-block-font mifare-data-block-trail-ctl">{{item.data.ctl}}</text>
+                                            <text class="mifare-data-block-font mifare-data-block-trail-keyb">{{item.data.keyb}}</text>
+                                        </block>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="container-left-info-main" style="display: {{pageMaps.pageEM410X.show?'flex':'none'}};">
+                        <view class="container-left-tag-detail" style="visibility: {{taginfo?'visiable':'hidden'}};">
+                            <view bindtap="onUserClickEditID" class="left-tag-detail-uid">
+                                <text>卡号：{{taginfo.uid}}</text>
+                                <icon class="icon-uid-edit" style="margin-left: 10rpx;"></icon>
+                            </view>
+                            <view class="left-tag-detail-uid" style="margin-top:20rpx;">类型：{{taginfo.uid?'ID卡':''}}</view>
+                        </view>
+                        <view class="container-left-id-copy">
+                            <icon class="icon-uid-copy"></icon>
+                            <text bindtap="onCopyUIDBtnClickCall" class="txt-uid-copy">复制卡号</text>
+                        </view>
+                        <image src="../../static/img/image6.png" style="width:100%; flex: 1;"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="container-right-buttons">
+                <view bindtap="{{item.bindtap}}" class="container-right-button-item" hoverClass="right-button-item-hover" hoverStartTime="10" hoverStayTime="50" style="{{item.disabled?'pointer-events: none;':''}}" wx:for="{{rightButtonList}}" wx:key="index">
+                    <image class="right-button-item-img" src="/static/img/{{item.img}}.png" style="opacity:{{item.disabled?'0.3':'1'}}"></image>
+                    <view class="right-button-item-text" disabled="{{item.disabled}}">{{item.text}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="container-main-bottom"></view>
+    </view>
+    <data-editor bind:cancel="onCloseDataEditor" bind:close="onCloseDataEditor" bind:confirm="onConfirmDataEdit" block="{{dataEditor.block}}" mode="{{dataEditor.mode}}" sector="{{dataEditor.sector}}" show="{{dataEditor.show}}" value="{{dataEditor.data}}"></data-editor>
+    <firm-editor bind:cancel="onCloseFirmEditor" bind:close="onCloseFirmEditor" bind:confirm="onConfirmFirmEdit" show="{{firmEditor.show}}" size="{{firmEditor.size}}" value="{{firmEditor.data}}"></firm-editor>
+    <save-data bind:cancel="onUserSaveDataCancel" bind:confirm="{{nickEditor.onConfirmCall}}" show="{{nickEditor.show}}" theme="dark" title="{{nickEditor.title}}"></save-data>
+    <write-progress bind:cancel="" bind:close="" progress="{{writeProgress.progress}}" show="{{writeProgress.show}}" title="{{writeProgress.title}}"></write-progress>
+    <write-result bind:cancel="onUserCloseWriteResultDialog" bind:close="onUserCloseWriteResultDialog" bind:complete="onUserCloseWriteResultDialog" bind:retry="onUserRetryWriteTagClick" show="{{writeResult.show}}" success="{{writeResult.success}}" titleMain="{{writeResult.titleMain}}" titleSub="{{writeResult.titleSub}}"></write-result>
+    <message-dark bind:cancel="{{messageBox.cancelCall}}" bind:close="{{messageBox.closeCall}}" bind:confirm="{{messageBox.confirmCall}}" cancelText="{{messageBox.cancelText}}" confrimText="{{messageBox.confirmText}}" content="{{messageBox.content}}" maxlength="{{messageBox.maxlength}}" mode="{{messageBox.mode}}" placeholder="{{messageBox.placeholder}}" show="{{messageBox.show}}" title="{{messageBox.title}}" value="{{messageBox.value}}"></message-dark>
+    <dialog-buy-service contentColor="{{2}}" showView="{{modal}}"></dialog-buy-service>
+    <backitp bindback="onUserBack" canback="{{false}}"></backitp>
+</view>

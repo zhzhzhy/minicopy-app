@@ -1,0 +1,18 @@
+<van-popup bind:close="onClose" customStyle="width: 88%; border-radius: 24rpx; background: #1A1D26;margin-top:-100rpx;" duration="100" show="{{show}}">
+    <view style="display: flex; flex-direction: column; width: 100%;">
+        <view class="container-icon">
+            <icon class="{{success?'icon-success':'icon-fail'}}"></icon>
+        </view>
+        <view class="container-title">
+            <text class="txt-title-main">{{titleMain}}</text>
+            <text class="txt-title-sub {{success?'txt-title-sub-succ':'txt-title-sub-fail'}}">{{titleSub}}</text>
+        </view>
+        <view class="container-button">
+            <view bindtap="onComplete" class="btn-base btn-complete" hoverClass="btn-bottom-hover" hoverStartTime="10" hoverStayTime="100" wx:if="{{success}}">完成</view>
+            <block wx:else>
+                <view bindtap="onCancel" class="btn-base btn-cancel" hoverClass="btn-bottom-hover" hoverStartTime="10" hoverStayTime="100">取消</view>
+                <view bindtap="onRetry" class="btn-base btn-confirm" hoverClass="btn-bottom-hover" hoverStartTime="10" hoverStayTime="100">重试</view>
+            </block>
+        </view>
+    </view>
+</van-popup>

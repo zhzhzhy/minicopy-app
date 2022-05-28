@@ -1,0 +1,26 @@
+<van-cell arrowDirection="{{arrowDirection}}" border="{{border}}" center="{{center}}" clickable="{{clickable}}" customClass="van-field" customStyle="{{customStyle}}" icon="{{leftIcon}}" isLink="{{isLink}}" required="{{required}}" size="{{size}}" titleStyle="margin-right: 12px;" titleWidth="{{titleWidth}}">
+    <slot name="left-icon" slot="icon"></slot>
+    <view class="label-class {{utils.bem( 'field__label',{disabled:disabled} )}}" slot="title" wx:if="{{label}}"> {{label}} </view>
+    <slot name="label" slot="title" wx:else></slot>
+    <view class="{{utils.bem( 'field__body',[type] )}}">
+        <view bindtap="onClickInput" class="{{utils.bem( 'field__control',[inputAlign,'custom'] )}}">
+            <slot name="input"></slot>
+        </view>
+        <include src="./textarea.wxml" wx:if="{{type==='textarea'}}"></include>
+        <include src="./input.wxml" wx:else></include>
+        <van-icon catch:touchstart="onClear" class="van-field__clear-root van-field__icon-root" name="{{clearIcon}}" wx:if="{{showClear}}"></van-icon>
+        <view bind:tap="onClickIcon" class="van-field__icon-container">
+            <van-icon class="van-field__icon-root {{iconClass}}" customClass="right-icon-class" name="{{rightIcon||icon}}" wx:if="{{rightIcon||icon}}"></van-icon>
+            <slot name="right-icon"></slot>
+            <slot name="icon"></slot>
+        </view>
+        <view class="van-field__button">
+            <slot name="button"></slot>
+        </view>
+    </view>
+    <view class="van-field__word-limit" wx:if="{{showWordLimit&&maxlength}}">
+        <view class="{{utils.bem( 'field__word-num',{full:value.length>=maxlength} )}}">{{value.length>=maxlength?maxlength:value.length}}</view>/{{maxlength}} </view>
+    <view class="{{utils.bem( 'field__error-message',[ errorMessageAlign,{disabled:disabled,error:error} ] )}}" wx:if="{{errorMessage}}"> {{errorMessage}} </view>
+</van-cell>
+<wxs module="utils" src="../wxs/utils.wxs" />
+<wxs module="computed" src="index.wxs" />

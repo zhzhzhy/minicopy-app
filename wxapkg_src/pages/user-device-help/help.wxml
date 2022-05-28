@@ -1,0 +1,89 @@
+<view>
+    <van-collapse bind:change="onChange" value="{{activeNames}}">
+        <van-collapse-item name="1" title="卡片使用问题">
+            <view class="bg">
+                <text class="title">1.原卡和复制卡同时失效。</text>
+                <text>
+</text> 复制卡被防火墙识别，用户被拉黑，需要先去物业恢复。 恢复后可以尝试使用UFUID卡复制使用<text>
+</text>
+                <text>
+</text>
+                <text class="title">2.复制卡无法开门或只能开一些门。</text>
+                <text>
+</text> a.复制卡被防火墙识别，尝试使用UFUID卡复制使用。<text>
+</text> b.如果使用UFUID还是无法开门，可能是门禁读头信号差导致，建议使用非金属的手机或加厚手机壳来增加信号强度。<text>
+</text> c.一些装电池使用的门禁读头，有特殊的节能设计，信号灵敏度低，会无法读取手机贴，暂时无法解决。<text>
+</text>
+                <text>
+</text>
+                <text class="title">3.校园卡饭卡等涉及金额的卡复制后无法使用。</text>
+                <text>
+</text> 不建议复制金额卡，复制后仅能使用门禁功能，不可以用其消费。否则会出现锁卡，需要去充值处解决。<text>
+</text>
+                <text>
+</text>
+                <text class="title">4.复制卡可以开门，但是原卡无法开门。</text>
+                <text>
+</text> 可能是高级防复制系统，暂时无法解决。<text>
+</text>
+                <text>
+</text>
+                <text class="title">5.手机贴单独可以开门，贴在手机背面后无法开门。</text>
+                <text>
+</text> 一些门禁信号弱，手机金属背板会稍微削弱手机贴读卡距离，可以尝试使用非金属的手机或加厚手机壳来增加信号强度。尽量把手机贴贴在手机壳外侧。 </view>
+        </van-collapse-item>
+        <van-collapse-item name="2" title="读卡器设备问题">
+            <view class="bg">
+                <text class="title">1.小程序无法搜索到读卡器。</text>
+                <text>
+</text> a.确保读卡器指示灯闪烁，如未闪烁，请检查USB线缆和供电。<text>
+</text> b.确保读卡器请放置在手机附近5米可视范围内。并且远离微波炉对讲机等强干扰设备。<text>
+</text> c.确保微信获取了蓝牙和定位权限，并升级手机系统到最新。<text>
+</text> d.一些老型号的手机可能会无法正常连接，请更换手机使用。<text>
+</text>
+                <text>
+</text>
+                <text class="title">2.如何绑定与解除设备。</text>
+            </view>
+        </van-collapse-item>
+        <van-collapse-item name="3" title="读卡器读写失败问题">
+            <view class="bg">
+                <text class="title">1.总是提示“读卡失败，未检测到卡片。”</text>
+                <text>
+</text> a.可能是卡片信号不佳，尝试贴近距离，远离无线充电等干扰设备，再次尝试。<text>
+</text> b.可能不是RFID非接触卡片，一般磁条卡，插卡式IC卡不支持读卡。可联系客服拍照确认。<text>
+</text>
+                <text>
+</text>
+                <text class="title">2.总是提示“读卡失败，不支持的类型。”</text>
+                <text>
+</text> 卡片可能是不支持的类型，设备无法识别到。无法完成复制。可以尝试用高级复制机读卡。<text>
+</text>
+                <text>
+</text>
+                <text class="title">3.总是提示“读卡失败，新型半加密卡”。</text>
+                <text>
+</text> 此种卡读卡器无法读取，但是高级复制机可以读取复制，例如iCopy-X或PM3。也可以联系客服寄回原卡免费读取数据。<text>
+</text>
+                <text>
+</text>
+                <text class="title">4.总是提示“读卡失败，新型全加密卡”。</text>
+                <text>
+</text> 此种卡读卡器无法读取，需要侦测设备辅助完成复制，例如变色龙侦测或iCopy-X或PM3嗅探，获取一个秘钥后再尝试。<text>
+</text>
+                <text>
+</text>
+                <text class="title">5.总是提示“读卡失败，卡片移开过快”。</text>
+                <text>
+</text> 卡片需要稳定贴放于读卡器上，远离无线充电等干扰设备，如果始终提示移开过快，可能是卡片信号不好造成，可以尝试移动卡片找到稳定的位置。<text>
+</text>
+                <text>
+</text>
+                <text class="title"> 6.总是提示“正在读卡”。</text>
+                <text>
+</text> 请耐心等待一下，如果长时间无反应可能是不支持的卡片，可以点击“意见反馈”提交申报。<text>
+</text>
+            </view>
+        </van-collapse-item>
+    </van-collapse>
+</view>

@@ -1,0 +1,118 @@
+<view class="container">
+    <view style="width: 80%; text-align: center;">
+        <text>{{scanRerutn}}</text>
+        <van-slider disabled useButtonSlot barHeight="16px" value="{{progress}}"></van-slider>
+    </view>
+    <view style="margin-top: 32px;">
+        <van-button bind:click="onStartScanReader" type="primary">扫描</van-button>
+        <van-button bind:click="onStopScanReader" style="margin-left: 16px;" type="primary">停扫</van-button>
+        <van-button bind:click="onConnectDXLReader" style="margin-left: 16px;" type="primary">连接DXL的</van-button>
+        <van-button bind:click="onConnectReader" style="margin-left: 16px;" type="primary">连接首个</van-button>
+    </view>
+    <view style="margin-top: 16px;">
+        <van-button bind:click="onDisconnect" style="margin-left: 16px;" type="primary">断开</van-button>
+        <van-button bind:click="onDisconnectAll" style="margin-left: 16px;" type="primary">断开所有</van-button>
+        <van-button bind:click="onCloseAdapter" style="margin-left: 16px;" type="primary">关闭适配器</van-button>
+    </view>
+    <view style="margin-top: 16px;">
+        <van-button bind:click="onTestOTA" style="margin-left: 16px;" type="primary">测试OTA</van-button>
+        <van-button bind:click="onStartOTA" style="margin-left: 16px;" type="primary">启动OTA</van-button>
+        <van-button bind:click="onReadSerial" style="margin-left: 16px;" type="primary">读SN</van-button>
+        <van-button bind:click="onWriteSerial" style="margin-left: 16px;" type="primary">写入SN</van-button>
+    </view>
+    <view style="margin-top: 16px;">
+        <van-cell-group>
+            <van-field center clearable useButtonSlot bind:change="onDeviceInput" border="{{false}}" placeholder="请输入设备名" value="{{deviceName}}">
+                <van-button bind:click="onSetDeviceName" slot="button" style="margin-left: 16px;" type="primary">设置设备名</van-button>
+                <van-button bind:click="onGetDeviceName" slot="button" style="margin-left: 16px; width: 30%;" type="primary">获取设备名</van-button>
+            </van-field>
+        </van-cell-group>
+    </view>
+    <view style="height: 1rpx; width: 90%; background: grey; margin: 16px;"></view>
+    <view style="margin-top: 16px;">
+        <van-button bind:click="onScanLFTag" type="primary">搜索低频卡</van-button>
+        <van-button bind:click="onWrite82XX" style="margin-left: 16px;" type="primary">写入82XX</van-button>
+        <van-button bind:click="onWrite55XX" style="margin-left: 16px;" type="primary">写入55XX</van-button>
+    </view>
+    <view style="margin-top: 16px;">
+        <van-cell-group>
+            <van-field center clearable useButtonSlot bind:change="onLFIDInput" border="{{false}}" placeholder="请输入ID号" value="{{deviceName}}">
+                <van-button bind:click="onWrite82XXCustomUID" slot="button" style="margin-left: 16px;" type="primary">自定义写入82XX</van-button>
+            </van-field>
+        </van-cell-group>
+    </view>
+    <view style="margin-top: 16px;">
+        <van-button bind:click="onRead82XXBlock" style="margin-left: 16px;" type="primary">82XX读block</van-button>
+        <van-button bind:click="onWrite82XXBlock1" style="margin-left: 16px;" type="primary">82XX写测试1</van-button>
+        <van-button bind:click="onWrite82XXBlock2" style="margin-left: 16px;" type="primary">82XX写测试2</van-button>
+    </view>
+    <view style="height: 1rpx; width: 90%; background: grey; margin: 16px;"></view>
+    <view style="margin-top: 16px;">
+        <van-button bind:click="onScanHf" type="primary">搜索高频卡</van-button>
+        <van-button bind:click="onAuthM1" style="margin-left: 16px;" type="primary">单块验证</van-button>
+        <van-button bind:click="onCheckMFSizeMax" style="margin-left: 16px;" type="primary">检查标签大小</van-button>
+    </view>
+    <view style="margin-top: 16px;">
+        <van-button bind:click="onReadStdM1_1_Block" style="margin-left: 16px;" type="primary">读单块</van-button>
+        <van-button bind:click="onReadStdM1_multi_Block" style="margin-left: 16px;" type="primary">读多块</van-button>
+        <van-button bind:click="onWriteStdM1_1_Block" style="margin-left: 16px;" type="primary">写单块</van-button>
+        <van-button bind:click="onWriteStdM1_multi_Block" style="margin-left: 16px;" type="primary">写多块</van-button>
+    </view>
+    <view style="margin-top: 16px;">
+        <view>
+            <van-button bind:click="onReadGen1A1Block" style="margin-left: 16px;" type="primary">后读单</van-button>
+            <van-button bind:click="onReadGen1A1Blocks" style="margin-left: 16px;" type="primary">后读多</van-button>
+            <van-button bind:click="onWriteGen1ABlock" style="margin-left: 16px;" type="primary">后写单</van-button>
+            <van-button bind:click="onWriteGen1ABlocks" style="margin-left: 16px;" type="primary">后写多</van-button>
+        </view>
+        <view style="margin-top: 16px;">
+            <van-button bind:click="onTestDarksideSupport" style="margin-left: 16px;" type="primary">测Darkside</van-button>
+            <van-button bind:click="onTestStaticNestedSupport" style="margin-left: 16px;" type="primary">测Static</van-button>
+            <van-button bind:click="onTestWeakNestedSupport" style="margin-left: 16px;" type="primary">测Nested</van-button>
+        </view>
+        <view style="margin-top: 16px;">
+            <van-button bind:click="onTestGen1AUnlock" style="margin-left: 16px;" type="primary">测后门解锁</van-button>
+            <van-button bind:click="onTestGen1AUplock" style="margin-left: 16px;" type="primary">测后门上锁</van-button>
+            <van-button bind:click="onTestAntResetDealy" style="margin-left: 16px;" type="primary">测更改重置延时</van-button>
+        </view>
+        <view style="margin-top: 16px;">
+            <van-button bind:click="onTestBatchKeysAuth1Sec" style="margin-left: 16px;" type="primary">批量验证单块</van-button>
+            <van-button bind:click="onTestBatchKeysAuthNSec" style="margin-left: 16px;" type="primary">批量验证全卡</van-button>
+            <van-button bind:click="onTestBatchReadKeybs" style="margin-left: 16px;" type="primary">读取KeyB</van-button>
+        </view>
+        <view style="margin-top: 16px;">
+            <van-button bind:click="onLoopScanTag" style="margin-left: 16px;" type="primary">一键找卡</van-button>
+            <van-button bind:click="onStopLoopTagScan" style="margin-left: 16px;" type="primary">停止找卡</van-button>
+            <van-button bind:click="on1KeyWriteTag" style="margin-left: 16px;" type="primary">一键写卡</van-button>
+        </view>
+        <view style="margin-top: 16px;">
+            <van-button bind:click="onSaveData" style="margin-left: 16px;" type="primary">保存</van-button>
+            <van-button bind:click="onDelDataFile" style="margin-left: 16px;" type="primary">删除</van-button>
+            <van-button bind:click="onDataFileList" style="margin-left: 16px;" type="primary">列表</van-button>
+        </view>
+        <view style="margin-top: 16px;">
+            <van-button bind:click="onDataFileInfo" style="margin-left: 16px;" type="primary">信息</van-button>
+            <van-button bind:click="onDataFileLoad" style="margin-left: 16px;" type="primary">加载</van-button>
+            <van-button bind:click="onDataFileUpdate" style="margin-left: 16px;" type="primary">更新</van-button>
+            <van-button bind:click="onDataCreate" style="margin-left: 16px;" type="primary">创建</van-button>
+        </view>
+        <view style="margin-top: 16px;">
+            <van-button bind:click="ontestNTDist" style="margin-left: 16px;" type="primary">距离侦测</van-button>
+            <van-button bind:click="onTestNestedRecovery" style="margin-left: 16px;" type="primary">Nested解密</van-button>
+            <van-button bind:click="onTestDarksideRecovery" style="margin-left: 16px;" type="primary">Darkside解密</van-button>
+        </view>
+        <view style="margin-top: 16px;">
+            <van-button bind:click="onTestKnownKeysAuth" style="margin-left: 16px;" type="primary">测试已知密钥的验证</van-button>
+            <van-button bind:click="onTestSTFastDecryptSupport" style="margin-left: 16px;" type="primary">测试ST极速解密是否支持</van-button>
+        </view>
+        <view style="margin-top: 16px;">
+            <van-button bind:click="onTestStaticNestedRecovery" style="margin-left: 16px;" type="primary">ST极速解密</van-button>
+        </view>
+        <view style="margin-top: 16px;">
+            <van-button bind:click="onReadFirmwareVersion" style="margin-left: 16px;" type="primary">读固件版本</van-button>
+        </view>
+    </view>
+    <view style="height: 1rpx; width: 90%; background: grey; margin: 16px;"></view>
+    <van-toast id="van-toast"></van-toast>
+    <van-dialog id="van-dialog"></van-dialog>
+</view>

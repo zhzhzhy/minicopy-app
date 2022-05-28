@@ -1,0 +1,19 @@
+<view>
+    <view class="loginContent">
+        <view class="logo">
+            <image class="logoImg" src="../../static/img/login_logo.png"></image>
+        </view>
+        <view class="loginButton">
+            <van-button bindgetphonenumber="getPhoneNumber" bindtap="checkPermission" customStyle="width:100%;height: 40px;font-size:30rpx;border-radius:20px 20px 20px 20px;background:#F5A200;border:1px solid #F5A200;color:#fff;font-weight:500;" disabled="{{!canLogin}}" openType="getPhoneNumber" type="primary">微信一键登录</van-button>
+        </view>
+        <view class="agree">
+            <view class="viewRead">
+                <checkbox-group bindchange="onCheckChange">
+                    <checkbox checked="{{false}}" class="radio" value="{{0}}"></checkbox>
+                    <text class="read" decode="true">&nbsp;阅读并同意法律声明及</text>
+                    <text bindtap="agree" class="privacy">《隐私政策》</text>
+                </checkbox-group>
+            </view>
+        </view>
+    </view>
+</view>

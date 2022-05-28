@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "van-cell": "../../miniprogram_npm/@vant/weapp/cell/index",
+        "van-button": "../../miniprogram_npm/@vant/weapp/button/index",
+        "card-wallet-list": "../../components/card-wallet-list/card-wallet-list",
+        "devicebar": "/components/device-tab-bar/device",
+        "master": "/components/switch-master-mode/master",
+        "tabbar": "/components/custom-tab-bar/index"
+    },
+    "navigationBarTitleText": "卡包"
+}

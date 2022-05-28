@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-button": "../../miniprogram_npm/@vant/weapp/button/index",
+        "devicebar": "/components/device-tab-bar/device"
+    }
+}

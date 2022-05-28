@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "van-field": "../../miniprogram_npm/@vant/weapp/field/index",
+        "van-uploader": "../../miniprogram_npm/@vant/weapp/uploader/index",
+        "van-button": "../../miniprogram_npm/@vant/weapp/button/index"
+    },
+    "navigationBarTitleText": "意见反馈"
+}

@@ -1,0 +1,39 @@
+.topLine {
+    background: rgba(0,0,0,.1);
+    height: 2rpx;
+    width: 100%;
+}
+
+page {
+    background: #fff;
+}
+
+.upImgBlock {
+    margin-left: 28rpx;
+    padding-top: 42rpx;
+}
+
+.upImgText {
+    color: #333;
+    font-size: 26rpx;
+    font-weight: 500;
+}
+
+.upImgRemain {
+    color: #a8a8a8;
+    font-size: 24rpx;
+    font-weight: 400;
+}
+
+.upImg {
+    height: auto;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    margin-top: 24rpx;
+    width: 95%;
+}
+
+.van_uploader {
+    height: 152rpx;
+    width: 152rpx;
+}

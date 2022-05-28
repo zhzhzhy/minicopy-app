@@ -10,7 +10,7 @@ minicopy双频IC/ID读写卡器android app(crack写卡无限次数)
 
 `wxapkg` 文件夹为小程序wxapkg包（含子包）
 
-`src`文件夹为uniapp 的反编译源码
+`src`文件夹为uniapp 的反编译的Android App源码
 
 TODO LIST:
 

@@ -17,7 +17,7 @@ TODO LIST:
 
 ## 硬件参数
 
-从PCB初步判断，主控芯片为STM32，PCB预留了`TDI``TMS``TCK``TDO`d等JTAG通信接口，采用JLINK仿真器烧录调试程序.
+从PCB初步判断，主控芯片为STM32，PCB预留了`TDI` `TMS` `TCK` `TDO`等JTAG通信接口，采用JLINK仿真器烧录调试程序.
 
 ![pcb.png](asset/pcb.png)
 
